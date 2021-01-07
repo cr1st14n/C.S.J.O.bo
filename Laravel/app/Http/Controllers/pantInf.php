@@ -9,6 +9,7 @@ class pantInf extends Controller
 {
     public function index()
     {
-        return View('pantallaInf.pantalla_E');
+        return View('pantallaInf.pantalla_B
+        ');
     }
 }

@@ -709,22 +709,12 @@
                     <tr>
                         <td><img src="{{ asset('plantillaPantalla/images/logo_csjo.jpg') }}" alt="" /></td>
                         <td>Dr. Morochi</td>
-                        <td>Lunes Miercoles</td>
-                        <td>Hrs 9:00 </td>
+                        <td>Previa coordinación</td>
+                        <td> </td>
                     </tr>
                 </table>
             </div>
-            <div class="table-users">
-                <div class="header">Otorrinolaringologia</div>
-                <table cellspacing="0">
-                    <tr>
-                        <td><img src="{{ asset('plantillaPantalla/images/logo_csjo.jpg') }}" alt="" /></td>
-                        <td>Dra. LLanos</td>
-                        <td>Lunes </td>
-                        <td>Hrs 9:00 - 11:00</td>
-                    </tr>
-                </table>
-            </div>
+           
             <div class="table-users">
                 <div class="header">Fisioterapia</div>
                 <table cellspacing="0">
@@ -758,12 +748,7 @@
                         <td>Lunes a Viernes </td>
                         <td>Hrs 8:00 a 12:00</td>
                     </tr>
-                    <tr>
-                        <td><img src="{{ asset('plantillaPantalla/images/logo_csjo.jpg') }}" alt="" /></td>
-                        <td>Dra. Mamani</td>
-                        <td>Martes a Viernes </td>
-                        <td>Hrs 12:30 - 15:30</td>
-                    </tr>
+                   
                 </table>
             </div>
             <div class="table-users">

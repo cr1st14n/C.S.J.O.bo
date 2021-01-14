@@ -630,8 +630,8 @@
                     <tr>
                         <td><img src="{{ asset('plantillaPantalla/images/logo_csjo.jpg') }}" alt="" /></td>
                         <td>Dra. Galvez</td>
-                        <td>Lunes, Miercoles y Viernes </td>
-                        <td>Hrs 9:00 - 14:00</td>
+                        <td>Lunes, Martes, Miercoles, Viernes, Sabado </td>
+                        <td>Hrs 8:30 - 14:30</td>
                     </tr>
                     <tr>
                         <td><img src="{{ asset('plantillaPantalla/images/logo_csjo.jpg') }}" alt="" /></td>
@@ -648,8 +648,8 @@
                     <tr>
                         <td><img src="{{ asset('plantillaPantalla/images/logo_csjo.jpg') }}" alt="" /></td>
                         <td>Dra. Gutierrez</td>
-                        <td>Martes y Jueves Turno tarde </td>
-                        <td>Hrs 15:00</td>
+                        <td>Martes, A llamado</td>
+                        <td></td>
                     </tr>
                 </table>
             </div>
@@ -732,8 +732,8 @@
                     <tr>
                         <td><img src="{{ asset('plantillaPantalla/images/logo_csjo.jpg') }}" alt="" /></td>
                         <td>Dr. Salazar</td>
-                        <td>Miercoles </td>
-                        <td>Hrs 10:30 - 12:00</td>
+                        <td>Sabado </td>
+                        <td>Hrs 10:30</td>
                     </tr>
                 </table>
             </div>
@@ -747,6 +747,12 @@
                         <td>Dra. Cortez</td>
                         <td>Lunes a Viernes </td>
                         <td>Hrs 8:00 a 12:00</td>
+                    </tr>
+                    <tr>
+                        <td><img src="{{ asset('plantillaPantalla/images/logo_csjo.jpg') }}" alt="" /></td>
+                        <td>Dra. Mamani</td>
+                        <td>Lunes a Viernes </td>
+                        <td>Hrs 8:30 a 14:30</td>
                     </tr>
                    
                 </table>
@@ -775,14 +781,14 @@
                     <tr>
                         <td><img src="{{ asset('plantillaPantalla/images/logo_csjo.jpg') }}" alt="" /></td>
                         <td>Dr. Henning</td>
-                        <td>Martes y Jueves </td>
-                        <td>Hrs 8:00 </td>
+                        <td>Jueves </td>
+                        <td>Hrs 14:30 </td>
                     </tr>
                     <tr>
                         <td><img src="{{ asset('plantillaPantalla/images/logo_csjo.jpg') }}" alt="" /></td>
                         <td>Dr. Candia</td>
-                        <td> Lunes y Viernes </td>
-                        <td>Hrs 9:00</td>
+                        <td> Lunes, Miercoles, Viernes </td>
+                        <td>Hrs 10:00</td>
                     </tr>
                 </table>
             </div>

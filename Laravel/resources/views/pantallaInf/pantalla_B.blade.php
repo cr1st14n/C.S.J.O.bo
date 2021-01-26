@@ -608,7 +608,7 @@
 
         <div class="col-lg-4">
             <div class="table-users">
-                <div class="header">Medina Familiar</div>
+                <div class="header">Medicina Familiar</div>
                 <table cellspacing="0" >
                     <tr>
                         <td><img src="{{ asset('plantillaPantalla/images/med1.png') }}" alt="" /></td>

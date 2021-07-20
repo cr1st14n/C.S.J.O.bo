@@ -608,24 +608,28 @@
 
         <div class="col-lg-4">
             <div class="table-users">
-                <div class="header">Medicina Familiar</div>
-                <table cellspacing="0" >
+                <div class="header">Medicina Familiar - Consulta: 70 Bs.-</div>
+                <table cellspacing="0">
                     <tr>
                         <td><img src="{{ asset('plantillaPantalla/images/med1.png') }}" alt="" /></td>
                         <td>Dr. Montecinos</td>
-                        <td>Lunes, Martes, Jueves y Viernes <hr> Miercoles</td>
-                        <td>Hrs 9:30am - 13:30 <hr>Hrs 14:30 - 20:00</td>
+                        <td>Lunes, Martes, Jueves y Viernes
+                            <hr> Miercoles
+                        </td>
+                        <td>Hrs 10:30am - 13:30
+                            <hr>Hrs 14:30 - 20:00
+                        </td>
                     </tr>
                     <tr>
                         <td><img src="{{ asset('plantillaPantalla/images/logo_csjo.jpg') }}" alt="" /></td>
-                        <td>Dra. Mollinedo</td>
-                        <td>Lunes a Sabado </td>
-                        <td>Hrs 9:00 - 14:00</td>
+                        <td>Dr. Marquez</td>
+                        <td>Lunes a Viernes </td>
+                        <td>Hrs 9:00 - 13:00</td>
                     </tr>
                 </table>
             </div>
             <div class="table-users">
-                <div class="header">Ginecologia</div>
+                <div class="header">Ginecologia - Consulta: 70 Bs.-</div>
                 <table cellspacing="0">
                     <tr>
                         <td><img src="{{ asset('plantillaPantalla/images/logo_csjo.jpg') }}" alt="" /></td>
@@ -633,28 +637,23 @@
                         <td>Lunes, Martes, Miercoles, Viernes, Sabado </td>
                         <td>Hrs 8:30 - 14:30</td>
                     </tr>
+
                     <tr>
                         <td><img src="{{ asset('plantillaPantalla/images/logo_csjo.jpg') }}" alt="" /></td>
-                        <td>Dra. Pinaya</td>
-                        <td>Martes y Jueves</td>
-                        <td>9:00 - 13:00</td>
-                    </tr>
-                    <tr>
-                        <td><img src="{{ asset('plantillaPantalla/images/logo_csjo.jpg') }}" alt="" /></td>
-                        <td>Dra. Romero</td>
+                        <td>Dra. Cori</td>
                         <td>Martes a Viernes</td>
-                        <td>14:00 - 18:00</td>
+                        <td>10:00 - 12:00</td>
                     </tr>
                     <tr>
                         <td><img src="{{ asset('plantillaPantalla/images/logo_csjo.jpg') }}" alt="" /></td>
-                        <td>Dra. Gutierrez</td>
-                        <td>Martes, A llamado</td>
-                        <td></td>
+                        <td>Dra. Mamani</td>
+                        <td>Lunes a Viernes </td>
+                        <td>14:00 a 18:00</td>
                     </tr>
                 </table>
             </div>
             <div class="table-users">
-                <div class="header">Traumatologia</div>
+                <div class="header">Traumatologia  - Consulta: 70 Bs.-</div>
                 <table cellspacing="0">
                     <tr>
                         <td><img src="{{ asset('plantillaPantalla/images/logo_csjo.jpg') }}" alt="" /></td>
@@ -665,8 +664,12 @@
                     <tr>
                         <td><img src="{{ asset('plantillaPantalla/images/logo_csjo.jpg') }}" alt="" /></td>
                         <td>Dr. Guzman</td>
-                        <td>Lunes, Miercoles, Viernes <hr>jueves </td>
-                        <td>Hrs 15:00 <hr> Hrs 9:00</td>
+                        <td>Lunes, Miercoles, Viernes
+                            <hr>jueves
+                        </td>
+                        <td>Hrs 15:00
+                            <hr> Hrs 9:00
+                        </td>
                     </tr>
                     <tr>
                         <td><img src="{{ asset('plantillaPantalla/images/logo_csjo.jpg') }}" alt="" /></td>
@@ -676,12 +679,24 @@
                     </tr>
                 </table>
             </div>
+            <div class="table-users">
+                <div class="header">Medicina Interna  - Consulta: 140 Bs.-</div>
+                <table cellspacing="0">
+                    <tr>
+                        <td><img src="{{ asset('plantillaPantalla/images/logo_csjo.jpg') }}" alt="" /></td>
+                        <td>Dr. Mamani</td>
+                        <td>Viernes</td>
+                        <td>Hrs 15:00</td>
+                    </tr>
+                </table>
+            </div>
+
 
 
         </div>
         <div class="col-lg-4">
             <div class="table-users">
-                <div class="header">Medicina General</div>
+                <div class="header">Medicina General  - Consulta: 60 Bs.-</div>
                 <table cellspacing="0">
                     <tr>
                         <td><img src="{{ asset('plantillaPantalla/images/logo_csjo.jpg') }}" alt="" /></td>
@@ -692,31 +707,31 @@
                     <tr>
                         <td><img src="{{ asset('plantillaPantalla/images/logo_csjo.jpg') }}" alt="" /></td>
                         <td>Dra. Villalobos</td>
-                        <td>Miercoles,Sabado </td>
-                        <td>Hrs 8:00 - 12:00</td>
+                        <td>Miercoles, Sabado </td>
+                        <td>Hrs 8:00 - 13:00</td>
                     </tr>
                 </table>
             </div>
             <div class="table-users">
-                <div class="header">Gastroenterologia</div>
+                <div class="header">Gastroenterologia  - Consulta: 70 Bs.-</div>
                 <table cellspacing="0">
                     <tr>
                         <td><img src="{{ asset('plantillaPantalla/images/logo_csjo.jpg') }}" alt="" /></td>
                         <td>Dr. Flores</td>
                         <td>Martes, Jueves </td>
-                        <td>Hrs 9:00 - 12:00</td>
+                        <td>Hrs 14:00 - 16:00</td>
                     </tr>
                     <tr>
                         <td><img src="{{ asset('plantillaPantalla/images/logo_csjo.jpg') }}" alt="" /></td>
-                        <td>Dr. Morochi</td>
-                        <td>Previa coordinación</td>
-                        <td> </td>
+                        <td>Dr. Ayoroa</td>
+                        <td>Lunes a Miercoles</td>
+                        <td> 12:30  </td>
                     </tr>
                 </table>
             </div>
-           
+
             <div class="table-users">
-                <div class="header">Fisioterapia</div>
+                <div class="header">Fisioterapia - Consulta: 70 Bs.-</div>
                 <table cellspacing="0">
                     <tr>
                         <td><img src="{{ asset('plantillaPantalla/images/logo_csjo.jpg') }}" alt="" /></td>
@@ -727,20 +742,53 @@
                 </table>
             </div>
             <div class="table-users">
-                <div class="header">Dermatologia</div>
+                <div class="header">Dermatologia  - Consulta: 70 Bs.-</div>
                 <table cellspacing="0">
                     <tr>
                         <td><img src="{{ asset('plantillaPantalla/images/logo_csjo.jpg') }}" alt="" /></td>
                         <td>Dr. Salazar</td>
-                        <td>Sabado </td>
-                        <td>Hrs 10:30</td>
+                        <td>Miercoles y Viernes </td>
+                        <td>Previa Cordinación</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="table-users">
+                <div class="header">Odontologia - Consulta: 10 Bs.- </div>
+                <table cellspacing="0">
+                    <tr>
+                        <td><img src="{{ asset('plantillaPantalla/images/logo_csjo.jpg') }}" alt="" /></td>
+                        <td>Dra. Adriana Tapia</td>
+                        <td>LUnes a Viernes </td>
+                        <td>9:00 - 13:00</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="table-users">
+                <div class="header">Otorrino - Consulta: 70 Bs.- </div>
+                <table cellspacing="0">
+                    <tr>
+                        <td><img src="{{ asset('plantillaPantalla/images/logo_csjo.jpg') }}" alt="" /></td>
+                        <td>Dra. Fuentelsaz</td>
+                        <td>Jueves</td>
+                        <td>9:30</td>
                     </tr>
                 </table>
             </div>
         </div>
         <div class="col-lg-4">
             <div class="table-users">
-                <div class="header">Pediatria</div>
+                <div class="header">Cardiologia  - Consulta: 120 Bs.- </div>
+                <table cellspacing="0">
+                    <tr>
+                        <td><img src="{{ asset('plantillaPantalla/images/logo_csjo.jpg') }}" alt="" /></td>
+                        <td>Dr. Cadena</td>
+                        <td>Jueves</td>
+                        <td>Hrs 16:00</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="table-users">
+                <div class="header">Pediatria  - Consulta: 70 Bs.-</div>
                 <table cellspacing="0">
                     <tr>
                         <td><img src="{{ asset('plantillaPantalla/images/logo_csjo.jpg') }}" alt="" /></td>
@@ -748,17 +796,10 @@
                         <td>Lunes a Viernes </td>
                         <td>Hrs 8:00 a 12:00</td>
                     </tr>
-                    <tr>
-                        <td><img src="{{ asset('plantillaPantalla/images/logo_csjo.jpg') }}" alt="" /></td>
-                        <td>Dra. Mamani</td>
-                        <td>Lunes a Viernes </td>
-                        <td>Hrs 8:30 a 14:30</td>
-                    </tr>
-                   
                 </table>
             </div>
             <div class="table-users">
-                <div class="header">Cirugia</div>
+                <div class="header">Cirugia  - Consulta: 70 Bs.-</div>
                 <table cellspacing="0">
                     <tr>
                         <td><img src="{{ asset('plantillaPantalla/images/logo_csjo.jpg') }}" alt="" /></td>
@@ -776,18 +817,18 @@
             </div>
 
             <div class="table-users">
-                <div class="header">Urologia</div>
+                <div class="header">Urologia  - Consulta: 70 Bs.-</div>
                 <table cellspacing="0">
                     <tr>
                         <td><img src="{{ asset('plantillaPantalla/images/logo_csjo.jpg') }}" alt="" /></td>
                         <td>Dr. Henning</td>
                         <td>Jueves </td>
-                        <td>Hrs 14:30 </td>
+                        <td>Previa cordinación </td>
                     </tr>
                     <tr>
                         <td><img src="{{ asset('plantillaPantalla/images/logo_csjo.jpg') }}" alt="" /></td>
                         <td>Dr. Candia</td>
-                        <td> Lunes, Miercoles, Viernes </td>
+                        <td>Lunes y  Viernes </td>
                         <td>Hrs 10:00</td>
                     </tr>
                 </table>
@@ -796,16 +837,24 @@
                 <div class="header" style="background-color: #D2F72C; color:black">Costo del servicio</div>
                 <table cellspacing="0">
                     <tr>
-                        <td>Consulta medica</td>
-                        <td>60 Bs.- </td>
+                        <td>Medico Especialista</td>
+                        <td>70 Bs.- </td>
                     </tr>
                     <tr>
-                        <td>Control Medico Programado</td>
-                        <td> 40 Bs.- </td>
+                        <td>Control Medico Programado (No especialidades)</td>
+                        <td> 45 Bs.- </td>
                     </tr>
                     <tr>
                         <td>Consulta por emergencias</td>
-                        <td> 60 Bs.- </td>
+                        <td> 70 Bs.- </td>
+                    </tr>
+                    <tr>
+                        <td>Prueba rapida Covid-19</td>
+                        <td> 250 Bs.- </td>
+                    </tr>
+                    <tr>
+                        <td>Prueba elisa Covid-19</td>
+                        <td> 500 Bs.- </td>
                     </tr>
                 </table>
             </div>

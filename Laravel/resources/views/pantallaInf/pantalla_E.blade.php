@@ -606,7 +606,7 @@
                 <table cellspacing="0">
                     <tr>
                         <td>Consulta medica</td>
-                        <td>60 Bs.- </td>
+                        <td>70 Bs.- </td>
                     </tr>
                     <tr>
                         <td>Control Medico Programado</td>

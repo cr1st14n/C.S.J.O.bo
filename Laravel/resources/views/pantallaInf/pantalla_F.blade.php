@@ -5,12 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
     <style>
         body {
             margin-left: 40px;
@@ -69,6 +65,28 @@
         #horasis {
             color: yellow;
         }
+
+        #mod_1 {
+            opacity: 70.5;
+        }
+
+        #mod_1_1 {
+            color: black;
+        }
+        .modalA {
+            color: black;
+        }
+
+        img {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            width: 100%;
+        }
+
+        #title1 {
+            color: black;
+        }
     </style>
 
 </head>
@@ -77,7 +95,7 @@
     <div class="row">
         <div class="col-lg-10">
 
-            <h1>CENTRO DE SALUD JESUS OBRERO - INFORMACION</h2>
+            <h1>CENTRO DE SALUD JESUS OBRERO - INFORMACION</h1>
         </div>
         <div class="col-lg-2">
 
@@ -93,78 +111,90 @@
                         <th>Medico</th>
                         <th>Dias</th>
                         <th>Horario</th>
+                        <th>Consulta</th>
                     </tr>
                 </thead>
                 <tbody id="bod">
                     <tr>
                         <td>Medicina Familiar</td>
                         <td>Dr. Montecinos</td>
-                        <td>Lunes, Martes, Jueves y Viernes
-                            <hr> Miercoles
+                        <td>L, Ma, J, V
+                            <hr> Mi.
                         </td>
-                        <td>Hrs 9:30am - 13:30
+                        <td>Hrs 10:30am - 13:30
                             <hr>Hrs 14:30 - 20:00
                         </td>
+                        <td>70 Bs.-</td>
                     </tr>
                     <tr>
                         <td>Medicina Familiar</td>
-                        <td>Dra. Mollinedo</td>
-                        <td>Lunes a Sabado </td>
-                        <td>Hrs 9:00 - 14:00</td>
+                        <td>Dr. Marquez</td>
+                        <td>L. a V. </td>
+                        <td>Hrs 9:00 - 13:00</td>
+                        <td>70 Bs.-</td>
                     </tr>
                     <tr>
                         <td>Ginecologia</td>
                         <td>Dra. Galvez</td>
-                        <td>Lunes, Miercoles y Viernes </td>
-                        <td>Hrs 9:00 - 14:00</td>
+                        <td>L, Ma, Mi, V, S </td>
+                        <td>Hrs 8:30 - 14:30</td>
+                        <td>70 Bs.-</td>
                     </tr>
                     <tr>
                         <td>Ginecologia</td>
-                        <td>Dra. Pinaya</td>
-                        <td>Martes y Jueves</td>
-                        <td>9:00 - 13:00</td>
+                        <td>Dra. Cori</td>
+                        <td>Ma. a V.</td>
+                        <td>10:00 - 12:00</td>
+                        <td>70 Bs.-</td>
                     </tr>
                     <tr>
                         <td>Ginecologia</td>
-                        <td>Dra. Romero</td>
-                        <td>Martes a Viernes</td>
-                        <td>14:00 - 18:00</td>
+                        <td>Dra. Mamani</td>
+                        <td>L. a V. </td>
+                        <td>14:00 a 18:00</td>
+                        <td>70 Bs.-</td>
                     </tr>
-                    <tr>
-                        <td>Ginecologia</td>
-                        <td>Dra. Gutierrez</td>
-                        <td>Martes y Jueves Turno tarde </td>
-                        <td>Hrs 15:00</td>
-                    </tr>
+
                     <tr>
                         <td>Traumatologia</td>
                         <td>Dr. Quispe</td>
-                        <td>Lunes, Martes, Miercoles, Viernes, Sabado </td>
+                        <td>L, Ma, Mi, V, S, </td>
                         <td>Hrs 8:00 - 12:00</td>
+                        <td>70 BS.-</td>
                     </tr>
                     <tr>
                         <td>Traumatologia</td>
                         <td>Dr. Guzman</td>
-                        <td>Lunes, Miercoles, Viernes
-                            <hr>jueves
+                        <td>L, Mi, V.
+                            <hr>J.
                         </td>
                         <td>Hrs 15:00
                             <hr> Hrs 9:00
                         </td>
+                        <td>70 BS.-</td>
                     </tr>
                     <tr>
                         <td>Traumatologia</td>
                         <td>Dr. Huchani</td>
-                        <td>Martes, Jueves </td>
+                        <td>Ma, J. </td>
                         <td>Hrs 15:00</td>
-                    </tr>
-                    <tr>
-                        <td>Medicina General</td>
-                        <td>Dr. Huallani</td>
-                        <td>Lunes A Viernes </td>
-                        <td>Hrs 14:00 - 20:00</td>
+                        <td>70 BS.-</td>
                     </tr>
 
+                    <tr>
+                        <td>Medicina Interna</td>
+                        <td>Dr. Mamani</td>
+                        <td>V.</td>
+                        <td>Hrs 15:00</td>
+                        <td>140 Bs.-</td>
+                    </tr>
+                    <tr>
+                        <td>Odontologia</td>
+                        <td>Dra. Adriana Tapia</td>
+                        <td>L. a V. </td>
+                        <td>9:00 - 13:00</td>
+                        <td>10 Bs.-</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
@@ -176,76 +206,102 @@
                         <th>Medico</th>
                         <th>Dias</th>
                         <th>Horario</th>
+                        <th>Consulta</th>
                     </tr>
                 </thead>
                 <tbody id="bod">
                     <tr>
                         <td>Medicina General</td>
+                        <td>Dr. Huallani</td>
+                        <td>L. A V. </td>
+                        <td>Hrs 14:00 - 20:00</td>
+                        <td>60 Bs.-</td>
+                    </tr>
+                    <tr>
+                        <td>Medicina General</td>
                         <td>Dra. Villalobos</td>
-                        <td>Miercoles,Sabado </td>
-                        <td>Hrs 8:00 - 12:00</td>
+                        <td>M, S. </td>
+                        <td>Hrs 8:00 - 13:00</td>
+                        <td>60 Bs.-</td>
                     </tr>
                     <tr>
                         <td>Gastroenterologia</td>
                         <td>Dr. Flores</td>
-                        <td>Martes, Jueves </td>
-                        <td>Hrs 9:00 - 12:00</td>
+                        <td>Ma, J. </td>
+                        <td>Hrs 14:00 - 16:00</td>
+                        <td>70 Bs.-</td>
                     </tr>
                     <tr>
                         <td>Gastroenterologia</td>
-                        <td>Dr. Morochi</td>
-                        <td>Lunes Miercoles</td>
-                        <td>Hrs 9:00 </td>
+                        <td>Dr. Ayoroa</td>
+                        <td>L. a Mi.</td>
+                        <td> 12:30 </td>
+                        <td>70 Bs.-</td>
                     </tr>
+
                     <tr>
                         <td>Fisioterapia</td>
                         <td>Lic. Irma Rojas</td>
-                        <td>Lunes a Viernes </td>
+                        <td>L. a V. </td>
                         <td>Hrs 9:00 - 13:00</td>
+                        <td>70 Bs.-</td>
                     </tr>
                     <tr>
-                        <td>Tramatologia</td>
+                        <td>Dermatologia</td>
                         <td>Dr. Salazar</td>
-                        <td>Miercoles </td>
-                        <td>Hrs 10:30 - 12:00</td>
+                        <td>M. y V. </td>
+                        <td>Previa Cordinación</td>
+                        <td>70 Bs.-</td>
                     </tr>
                     <tr>
-                        <td>Pedriatria</td>
+                        <td>Otorrino</td>
+                        <td>Dra. Fuentelsaz</td>
+                        <td>J.</td>
+                        <td>9:30</td>
+                        <td>70 Bs.-</td>
+                    </tr>
+                    <tr>
+                        <td>Cardiologia</td>
+                        <td>Dr. Cadena</td>
+                        <td>J.</td>
+                        <td>Hrs 16:00</td>
+                        <td>120 Bs.-</td>
+                    </tr>
+                    <tr>
+                        <td>Pediatria</td>
                         <td>Dra. Cortez</td>
-                        <td>Lunes a Viernes </td>
+                        <td>L. a V. </td>
                         <td>Hrs 8:00 a 12:00</td>
-                    </tr>
-                    <tr>
-                        <td>Pedriatria</td>
-                        <td>Dra. Mamani</td>
-                        <td>Martes a Viernes </td>
-                        <td>Hrs 12:30 - 15:30</td>
+                        <td>70 Bs.-</td>
                     </tr>
                     <tr>
                         <td>Cirugia</td>
                         <td>Dr. Lazo</td>
-                        <td>Lunes a Viernes </td>
+                        <td>L. a V. </td>
                         <td>Hrs 9:30</td>
+                        <td>70 Bs.-</td>
                     </tr>
                     <tr>
                         <td>Cirugia</td>
                         <td>Dr. Santander</td>
-                        <td>Lunes, Martes, Miercoles y Viernes</td>
+                        <td>L, M, Mi. y V.</td>
                         <td>Hrs 12:00 17:00</td>
+                        <td>70 Bs.-</td>
                     </tr>
                     <tr>
                         <td>Urologia</td>
                         <td>Dr. Henning</td>
-                        <td>Jueves </td>
-                        <td>Hrs 14:30 </td>
+                        <td>J. </td>
+                        <td>Previa cordinación </td>
+                        <td>70 Bs.-</td>
                     </tr>
                     <tr>
                         <td>Urologia</td>
                         <td>Dr. Candia</td>
-                        <td> Lunes y Viernes </td>
-                        <td>Hrs 9:00</td>
+                        <td>L. y V. </td>
+                        <td>Hrs 10:00</td>
+                        <td>70 Bs.-</td>
                     </tr>
-
                 </tbody>
             </table>
         </div>
@@ -266,7 +322,7 @@
                         <td>500 Bs.-</td>
                     </tr>
                     <tr>
-                        <td>Servcio de emergencias</td>
+                        <td>Servicio de emergencias</td>
                         <td>24 horas</td>
                     </tr>
 
@@ -275,74 +331,76 @@
         </div>
     </div>
 
-
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mod_1">
-        Launch demo modal
-    </button>
-
     <!-- Modal -->
+    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example">Small modal</button> -->
 
-    <div class="modal fade" id="mod_1" tabindex="-1" role="dialog" aria-labelledby="a" aria-hidden="true" data-width="800">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal fade modalA" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
-
+                <div class="modal-header">
+                </div>
                 <div class="modal-body">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-4">.col-md-4</div>
-                            <div class="col-md-4 ml-auto">.col-md-4 .ml-auto</div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3 ml-auto">.col-md-3 .ml-auto</div>
-                            <div class="col-md-2 ml-auto">.col-md-2 .ml-auto</div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 ml-auto">.col-md-6 .ml-auto</div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-9">
-                                Level 1: .col-sm-9
-                                <div class="row">
-                                    <div class="col-8 col-sm-6">
-                                        Level 2: .col-8 .col-sm-6
-                                    </div>
-                                    <div class="col-4 col-sm-6">
-                                        Level 2: .col-4 .col-sm-6
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <img src="{{ asset('assets/img/pantalla/img_2.jpg') }}" alt="" width="300">
+
                 </div>
             </div>
         </div>
     </div>
+   
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
     <script language="JavaScript">
-        setInterval("mueveReloj()", 1000)
-        setTimeout("showModal()", 10000)
+        // * variables de modal 
+        min1 = 0;
+        min2 = 0;
 
-        function showModal() {
-            $('#mod_1').modal('show');
-            console.log('1');
+        // * variables de imagenes
+        dat_cont=0; 
+        dat_A= [
+            { ruta:"111111" },
+            { ruta:"22222" },
+            { ruta:"333333" },
+        ]
 
 
-            setTimeout(function() {
-                $('#mod_1').modal('hide');
-                setTimeout("showModal()", 10000)
-            }, 5000)
-        }
+
+        setInterval("mueveReloj()", 1000);
 
         function mueveReloj() {
             momentoActual = new Date()
             hora = momentoActual.getHours()
             minuto = momentoActual.getMinutes()
             segundo = momentoActual.getSeconds()
-            horaImprimible = hora + " : " + minuto + " : " + segundo
+            if (minuto < 10) {
+                minuto = "0" + minuto;
+            }
+            if (segundo < 10) {
+                segundo = "0" + segundo;
+            }
+            horaImprimible = hora + " : " + minuto + ":" + segundo;
             document.getElementById("horasis").innerText = horaImprimible
+
+            cont = minuto % 10;
+            if (cont == 0 || minuto < 0) {
+                min1 = minuto;
+                showModal();
+            }
+        }
+
+        function showModal() {
+            if (min1 != min2) {
+                console.log(dat_A[dat_cont]);
+                dat_cont=dat_cont+1;
+                $('.modalA').modal('show');
+                setTimeout(function() {
+                    $('.modalA').modal('hide');
+                }, 8000)
+            }
+            min2 = min1;
         }
     </script>
 </body>
-
 
 </html>

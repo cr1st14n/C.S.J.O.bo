@@ -73,6 +73,7 @@
         #mod_1_1 {
             color: black;
         }
+
         .modalA {
             color: black;
         }
@@ -136,7 +137,7 @@
                     <tr>
                         <td>Ginecologia</td>
                         <td>Dra. Galvez</td>
-                        <td>L, Ma, Mi, V, S </td>
+                        <td>L, Ma, Mi, V </td>
                         <td>Hrs 8:30 - 14:30</td>
                         <td>70 Bs.-</td>
                     </tr>
@@ -150,7 +151,7 @@
                     <tr>
                         <td>Ginecologia</td>
                         <td>Dra. Mamani</td>
-                        <td>L. a V. </td>
+                        <td>L. a S. </td>
                         <td>14:00 a 18:00</td>
                         <td>70 Bs.-</td>
                     </tr>
@@ -340,13 +341,13 @@
                 <div class="modal-header">
                 </div>
                 <div class="modal-body">
-                    <img src="{{ asset('assets/img/pantalla/img_2.jpg') }}" alt="" width="300">
+                    <img id="img_pub" src="" alt="">
 
                 </div>
             </div>
         </div>
     </div>
-   
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
@@ -357,11 +358,16 @@
         min2 = 0;
 
         // * variables de imagenes
-        dat_cont=0; 
-        dat_A= [
-            { ruta:"111111" },
-            { ruta:"22222" },
-            { ruta:"333333" },
+        dat_cont = 0;
+        dat_A = [{
+                ruta: "assets/img/pantalla/img_2.jpg"
+            },
+            {
+                ruta: "assets/img/pantalla/img_1.png"
+            },
+            {
+                ruta: "assets/img/pantalla/img_3.png"
+            },
         ]
 
 
@@ -391,12 +397,19 @@
 
         function showModal() {
             if (min1 != min2) {
-                console.log(dat_A[dat_cont]);
-                dat_cont=dat_cont+1;
+                document.getElementById('img_pub').src = dat_A[dat_cont].ruta;
+                console.log(dat_cont);
+                if (dat_A.length == dat_cont+1) {
+                    
+                    dat_cont = 0;
+                    console.log(dat_cont);
+                } else {
+                    dat_cont = dat_cont + 1;
+                }
                 $('.modalA').modal('show');
                 setTimeout(function() {
                     $('.modalA').modal('hide');
-                }, 8000)
+                }, 12000)
             }
             min2 = min1;
         }

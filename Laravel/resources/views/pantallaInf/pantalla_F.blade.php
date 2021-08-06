@@ -21,7 +21,8 @@
 
         thead {
             font-size: 25px;
-            background-color: #838282;
+            background-color: black;
+            color: white;
         }
 
         tbody {

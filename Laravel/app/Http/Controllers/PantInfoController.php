@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\pantInfo;
 use Illuminate\Http\Request;
-use View;
 
-class pantInf extends Controller
+class PantInfoController extends Controller
 {
+    
     public function index()
     {
         return View('pantallaInf.pantalla_F');
@@ -15,5 +16,10 @@ class pantInf extends Controller
     {
         return View('viewRecepcion.viewPantInfo.home');
     }
-   
+    public function  listData1()
+    {
+        //
+    }
+
+    
 }

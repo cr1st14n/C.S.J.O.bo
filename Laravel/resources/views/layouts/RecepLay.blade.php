@@ -94,7 +94,7 @@
 @endif
 		<!-- //breadcrumb-->
 				
-			<div id="content">
+			<div id="content" id="lay_contend">
 					<div class="row">
     						@yield('content')
 					</div>
@@ -122,6 +122,7 @@
 				<li><a href="{{route('citasPrecias_Index')}} "><span><i class="icon fa fa-book"></i> Citas Previas </span></a></li>
 				<li><a href="{{route('reporte_index')}} "> <i class="icon  fa fa-bar-chart-o"></i>Informes / Reportes </a></li>
 				<li><a href="{{route('notas-index')}} "> <i class="icon  fa fa-file-o"></i>Notas / Prestamos</a></li>
+				<li><a href="#" id="btn_index_pagPantInfo" > <i class="icon fa fa-desktop"></i>Pantalla de información</a></li>
 
 					
 			</ul>

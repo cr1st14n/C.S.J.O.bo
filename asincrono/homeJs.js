@@ -97,3 +97,19 @@ $('#btn_index_descargosQuiEndo').on('click', function () {
   });
 });
 
+//* llamada a VIEW home configuracin de pantalla de informacion
+$("#btn_index_pagPantInfo").on("click", function () {
+  $.ajax({
+    type: "GET",
+    url: "IndexPagPantInfo",
+    // data: "data",
+    // dataType: "dataType",
+    success: function (response) {
+      $("#content").html(response);
+      setTimeout(() => {
+        listTableMedTurn()
+      }, 1000);
+    },
+  });
+});
+

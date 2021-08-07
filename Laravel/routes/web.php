@@ -173,6 +173,12 @@ Route::group(['middleware' => ['recepcion'], 'prefix' => '/Recepcion'], function
 		Route::post('/update/', 'PrestHCLController@update');
 		Route::get('/cerrarPrestamo/{id}', 'PrestHCLController@cerrarPrestamo');
 	});
+	Route::group(['prefix'=>'IndexPagPantInfo'],function ()
+	{
+		route::get('/','pantInf@ViewHomePantInfo');
+		route::get('listData1','pantInf@listData1');
+		
+	});
 });
 
 //---------------CAJA------//

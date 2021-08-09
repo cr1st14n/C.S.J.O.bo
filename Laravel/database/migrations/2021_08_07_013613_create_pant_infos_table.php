@@ -16,6 +16,17 @@ class CreatePantInfosTable extends Migration
         Schema::create('pant_infos', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+
+            $table->string('pf_esp')->nullable();
+            $table->string('pf_med')->nullable();
+            $table->longText('pf_tur')->nullable();
+            $table->longText('pf_cos')->nullable();
+
+            //campos de auditoria 
+            $table->integer('ca_usu_id')->nullable();
+            $table->string('ca_tipo', 10)->nullable();
+            $table->dateTime('ca_fecha')->nullable();
+            $table->integer('ca_estado')->nullable();
         });
     }
 

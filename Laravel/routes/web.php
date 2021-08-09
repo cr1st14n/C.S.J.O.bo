@@ -20,7 +20,7 @@ Route::post('searchredirect', 'PacienteController@buscar');
 
 
 // -------pantalla de informaciones-----------//
-Route::get('pantallaInformacion','pantInf@index');
+Route::get('pantallaInformacion','PantInfoController@index');
 
 //--------------administracion---------//
 
@@ -175,9 +175,9 @@ Route::group(['middleware' => ['recepcion'], 'prefix' => '/Recepcion'], function
 	});
 	Route::group(['prefix'=>'IndexPagPantInfo'],function ()
 	{
-		route::get('/','pantInf@ViewHomePantInfo');
-		route::get('listData1','pantInf@listData1');
-		
+		route::get('/','PantInfoController@ViewHomePantInfo');
+		route::get('listData1','PantInfoController@listData1');
+		route::any('create1','PantInfoController@create1');
 	});
 });
 

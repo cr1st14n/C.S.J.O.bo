@@ -20,11 +20,31 @@ class PantInfoController extends Controller
     }
     public function  listData1()
     {
-        //
+        $d =[];
+        $variable = pantInfo::get();
+            foreach ($variable as $key => $value) {
+                $tr=[   'id'=>$value['id'],
+                        'pf_esp'=>$value['pf_esp'],
+                        'pf_med'=>$value['pf_med'],
+                        'pf_tur'=> unserialize($value['pf_tur']),
+                        'pf_fecha'=>$value['ca_fecha'],
+                    ];
+                    array_push($d,$tr);
+            }
+        return $d;
+
+//pf_esp
+// pf_med
+// pf_tur
+// ca_fecha
+
+
+
+
     }
     public function create1(Request $request)
     {
-        return $request->input('tur');
+        // return Auth::user()->usu_ci;
         $new = new pantInfo();
         $new->pf_esp = $request->input('esp');
         $new->pf_med = $request->input('med');
@@ -36,6 +56,6 @@ class PantInfoController extends Controller
         $new->ca_fecha = Carbon::now();
         $new->ca_estado = 1;
         $e = $new->save();
-        return $e;
+        return ($e) ? 1 : 0 ;        
     }
 }

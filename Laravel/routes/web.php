@@ -177,7 +177,7 @@ Route::group(['middleware' => ['recepcion'], 'prefix' => '/Recepcion'], function
 	{
 		route::get('/','PantInfoController@ViewHomePantInfo');
 		route::get('listData1','PantInfoController@listData1');
-		route::any('create1','PantInfoController@create1');
+		route::post('create1','PantInfoController@create1');
 	});
 });
 

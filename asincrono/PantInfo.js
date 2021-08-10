@@ -7,9 +7,39 @@ function listTableMedTurn(data) {
   $.ajax({
     type: "GET",
     url: "IndexPagPantInfo/listData1",
-    data: "data",
-    dataType: "dataType",
-    success: function (response) {},
+    // data: "data",
+    // dataType: "dataType",
+    success: function (response) {
+      console.log(response);
+      var html = response
+        .map(function (e) {
+          var html2=e.pf_tur.map( function (a,b,c) {
+              console.log(a,b,c);  
+            return a=`
+                ${a[0].dias} - ${a[0].hora} 
+                <br>`;
+            }).join(' ');
+            console.log(html2);
+
+
+          return (a = `
+        <tr>
+            <td>${e.pf_esp}</td>
+            <td valign="middle">${e.pf_med}</td>
+            <td>${html2}</td>
+            <td>${moment(e.ca_fecha).format('DD/MM/YYYY')}</td>
+            <td>
+                <span class="tooltip-area">
+                    <a href="javascript:void(0)" class="btn btn-default btn-sm" title="Edit"><i class="fa fa-pencil"></i></a>
+                    <a href="javascript:void(0)" class="btn btn-default btn-sm" title="Delete"><i class="fa fa-trash-o"></i></a>
+                </span>
+            </td>
+        </tr>
+        `);
+        })
+        .join(" ");
+        $('#table_cont_tunMed').html(html);
+    },
   });
 }
 function tableMedTurn(param) {}
@@ -33,13 +63,20 @@ $("#form_createTurnMed").submit(function (e) {
     tur: turno,
   };
   $.ajax({
-      type: "any",
-      url: "IndexPagPantInfo/create1",
-      data: data,
+    type: "POST",
+    url: "IndexPagPantInfo/create1",
+    data: data,
     //   dataType: "dataType",
-      success: function (response) {
-          console.log(response);
+    success: function (response) {
+      if (response) {
+        notif("1", "Horario registrado");
+        $("#form_createTurnMed").trigger("reset");
+        $("#md_createTurMed").modal("hide");
+        listTableMedTurn();
+      } else {
+        notif("2", "Error!. ");
       }
+    },
   });
 });
 

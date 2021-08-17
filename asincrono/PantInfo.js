@@ -13,39 +13,39 @@ function listTableMedTurn(data) {
       console.log(response);
       var html = response
         .map(function (e) {
-          var html2=e.pf_tur.map( function (a,b,c) {
-              console.log(a,b,c);  
-            return a=`
+          var html2 = e.pf_tur
+            .map(function (a, b, c) {
+              return (a = `
                 ${a[0].dias} - ${a[0].hora} 
-                <br>`;
-            }).join(' ');
-            console.log(html2);
-
-
+                <br>`);
+            })
+            .join(" ");
           return (a = `
         <tr>
             <td>${e.pf_esp}</td>
             <td valign="middle">${e.pf_med}</td>
             <td>${html2}</td>
-            <td>${moment(e.ca_fecha).format('DD/MM/YYYY')}</td>
+            <td>${moment(e.ca_fecha).format("DD/MM/YYYY")}</td>
             <td>
                 <span class="tooltip-area">
-                    <a href="javascript:void(0)" class="btn btn-default btn-sm" title="Edit"><i class="fa fa-pencil"></i></a>
-                    <a href="javascript:void(0)" class="btn btn-default btn-sm" title="Delete"><i class="fa fa-trash-o"></i></a>
+                    <button class="btn btn-default btn-sm" onClick='turnMedEdit_1(${
+                      e.id
+                    })' title="Edit"><i class="fa fa-pencil"></i></button>
+                    <button class="btn btn-default btn-sm" title="Delete"><i class="fa fa-trash-o"></i></button>
                 </span>
             </td>
         </tr>
         `);
         })
         .join(" ");
-        $('#table_cont_tunMed').html(html);
+      $("#table_cont_tunMed").html(html);
     },
   });
 }
 function tableMedTurn(param) {}
 
 $("#btn_addTurnMed").click(function (e) {
-  showList_modTableTurnMed1();
+  turno = [];
   $("#tableModalListTurnHoras").html("");
   $("#md_createTurMed").modal("show");
 });
@@ -110,3 +110,21 @@ $("#btn_add_diasTurnoMed").click(function (e) {
   console.log(turno);
   showList_modTableTurnMed1();
 });
+
+function turnMedEdit_1(id) {
+  $.ajax({
+    type: "GET",
+    url: "IndexPagPantInfo/edit_1",
+    data: { id: id },
+    // dataType: "dataType",
+    success: function (response) {
+      showMdEditTurMed_1(response);
+    },
+  });
+}
+
+function showMdEditTurMed_1(response) {
+  console.log(response.turnos);
+
+  $('#md_editTurMed').modal('show');
+}

@@ -32,15 +32,6 @@ class PantInfoController extends Controller
                     array_push($d,$tr);
             }
         return $d;
-
-//pf_esp
-// pf_med
-// pf_tur
-// ca_fecha
-
-
-
-
     }
     public function create1(Request $request)
     {
@@ -48,7 +39,7 @@ class PantInfoController extends Controller
         $new = new pantInfo();
         $new->pf_esp = $request->input('esp');
         $new->pf_med = $request->input('med');
-        $new->pf_cos = $request->input('cos');
+        $new->pf_cos = $request->input('cot');
         $new->pf_tur = serialize($request->input('tur'));
 
         $new->ca_usu_id = Auth::user()->id;
@@ -57,5 +48,13 @@ class PantInfoController extends Controller
         $new->ca_estado = 1;
         $e = $new->save();
         return ($e) ? 1 : 0 ;        
+    }
+    public function edit_1(Request $request)
+    {
+        $tur= pantInfo::where('id',$request->input('id'))->first();
+
+        return ["data1"=>$tur,"turnos"=> unserialize($tur->pf_tur)];
+
+
     }
 }

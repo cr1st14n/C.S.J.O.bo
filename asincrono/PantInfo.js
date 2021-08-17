@@ -1,5 +1,6 @@
 // * VARIABLES DE INICIO
 turno = [];
+id_turMed_update = "";
 // *----
 
 function listTableMedTurn(data) {
@@ -81,7 +82,7 @@ $("#form_createTurnMed").submit(function (e) {
 });
 
 // * seccion add turno y dia dentro detalle view modal
-function showList_modTableTurnMed1() {
+function showList_modTableTurnMed1(tipo) {
   //   console.log(turno);
   for (let i = 0; i < turno.length; i++) {
     const element = turno[i];
@@ -97,8 +98,15 @@ function showList_modTableTurnMed1() {
                 </span>
             </td>
         </tr>`;
+        console.log(htmlt1);
+        break;
   }
-  $("#tableModalListTurnHoras").append(htmlt1);
+  if (tipo == 1) {
+    $("#tableModalListTurnHoras").append(htmlt1);
+  } 
+  if(tipo == 2) {
+    $("#tableModalListTurnHoras_edit").append(htmlt1);
+  }
 }
 
 $("#btn_add_diasTurnoMed").click(function (e) {
@@ -107,8 +115,7 @@ $("#btn_add_diasTurnoMed").click(function (e) {
   h = $("#inp_diHo_horas").val();
   a = [{ dias: d, hora: h }];
   turno.push(a);
-  console.log(turno);
-  showList_modTableTurnMed1();
+  showList_modTableTurnMed1(1);
 });
 
 function turnMedEdit_1(id) {
@@ -123,8 +130,17 @@ function turnMedEdit_1(id) {
   });
 }
 
-function showMdEditTurMed_1(response) {
-  console.log(response.turnos);
+function showMdEditTurMed_1(data) {
+  turno = data.turnos;
+  $("#tableModalListTurnHoras_edit").html("");
+  showList_modTableTurnMed1(2)
+  
+  id_turMed_update = data.data1.id;
+  $('#inp_turMed_esp_edit').val(data.data1.pf_esp);
+  $('#inp_turMed_med_edit').val(data.data1.pf_med);
+  $('#inp_turMed_cos_edit').val(data.data1.pf_cos);
 
-  $('#md_editTurMed').modal('show');
+
+
+  $("#md_editTurMed").modal("show");
 }

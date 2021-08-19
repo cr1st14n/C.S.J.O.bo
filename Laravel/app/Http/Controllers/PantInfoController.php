@@ -20,17 +20,18 @@ class PantInfoController extends Controller
     }
     public function  listData1()
     {
-        $d =[];
+        $d = [];
         $variable = pantInfo::get();
-            foreach ($variable as $key => $value) {
-                $tr=[   'id'=>$value['id'],
-                        'pf_esp'=>$value['pf_esp'],
-                        'pf_med'=>$value['pf_med'],
-                        'pf_tur'=> unserialize($value['pf_tur']),
-                        'pf_fecha'=>$value['ca_fecha'],
-                    ];
-                    array_push($d,$tr);
-            }
+        foreach ($variable as $key => $value) {
+            $tr = [
+                'id' => $value['id'],
+                'pf_esp' => $value['pf_esp'],
+                'pf_med' => $value['pf_med'],
+                'pf_tur' => unserialize($value['pf_tur']),
+                'pf_fecha' => $value['ca_fecha'],
+            ];
+            array_push($d, $tr);
+        }
         return $d;
     }
     public function create1(Request $request)
@@ -47,14 +48,20 @@ class PantInfoController extends Controller
         $new->ca_fecha = Carbon::now();
         $new->ca_estado = 1;
         $e = $new->save();
-        return ($e) ? 1 : 0 ;        
+        return ($e) ? 1 : 0;
     }
     public function edit_1(Request $request)
     {
-        $tur= pantInfo::where('id',$request->input('id'))->first();
+        $tur = pantInfo::where('id', $request->input('id'))->first();
 
-        return ["data1"=>$tur,"turnos"=> unserialize($tur->pf_tur)];
-
-
+        return ["data1" => $tur, "turnos" => unserialize($tur->pf_tur)];
+    }
+    public function update1(Request $request)
+    {
+        $res = pantInfo::where('id', $request->input('idTM'))->update(
+            [
+                ''=>$request->input(''),
+            ]
+        );
     }
 }

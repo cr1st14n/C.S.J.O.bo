@@ -161,3 +161,34 @@ $("#btn_add_diasTurnoMed_edit").click(function (e) {
   turno.push(a);
   showList_modTableTurnMed1(2);
 });
+
+//* update turnos medico 
+$('#form_editTurnMed').submit(function (e) { 
+  e.preventDefault();
+  data = {
+    _token: $("meta[name=csrf-token]").attr("content"),
+
+    idTM:id_turMed_update,
+    esp: $("#inp_turMed_esp_edit").val(),
+    med: $("#inp_turMed_med_edit").val(),
+    cot: $("#inp_turMed_cos_edit").val(),
+    tur: turno,
+  };
+  $.ajax({
+    type: "POST",
+    url: "IndexPagPantInfo/update1",
+    data: data,
+    //   dataType: "dataType",
+    success: function (response) {
+      console.log(response);
+      if (response) {
+        notif("3", "Actualizado!");
+        $("#form_editTurnMed").trigger("reset");
+        $("#md_editTurMed").modal("hide");
+        listTableMedTurn();
+      } else {
+        notif("2", "Error!. ");
+      }
+    },
+  });
+});

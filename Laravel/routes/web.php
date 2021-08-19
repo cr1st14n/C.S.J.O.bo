@@ -179,6 +179,7 @@ Route::group(['middleware' => ['recepcion'], 'prefix' => '/Recepcion'], function
 		route::get('listData1','PantInfoController@listData1');
 		route::post('create1','PantInfoController@create1');
 		route::get('edit_1','PantInfoController@edit_1');
+		route::post('update1','PantInfoController@update1');
 	});
 });
 

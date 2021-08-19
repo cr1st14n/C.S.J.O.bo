@@ -175,7 +175,7 @@
                     <hr>
                     <div class="form-group offset">
                         <div>
-                            <button type="submit"  class="btn btn-danger">Guardar</button>
+                            <button type="submit"  class="btn btn-danger">Guardar Cambios</button>
                             <button type="reset" class="btn">Cancel</button>
                         </div>
                     </div>

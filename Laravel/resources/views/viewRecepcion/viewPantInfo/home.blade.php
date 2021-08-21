@@ -77,7 +77,7 @@
                         <div>
                             <label> Dias y Hora de atención</label>
                             <input type="text" id="inp_diHo_dias" class="form-control" placeholder="Dias..." autocomplete="off">
-                            <input type="text" id="inp_diHo_horas" class="form-control" placeholder="Hora..." autocomplete="off"> 
+                            <input type="text" id="inp_diHo_horas" class="form-control" placeholder="Hora..." autocomplete="off">
                             <button type="button" id="btn_add_diasTurnoMed" class="btn btn-block btn-theme-inverse"><strong>+</strong></button>
                         </div>
                     </div>
@@ -108,7 +108,7 @@
                     <hr>
                     <div class="form-group offset">
                         <div>
-                            <button type="submit"  class="btn btn-theme">Finalizar y guardar</button>
+                            <button type="submit" class="btn btn-theme">Finalizar y guardar</button>
                             <button type="reset" class="btn">Cancel</button>
                         </div>
                     </div>
@@ -144,7 +144,7 @@
                         <div>
                             <label> Dias y Hora de atención</label>
                             <input type="text" id="inp_diHo_dias_edit" class="form-control" placeholder="Dias..." autocomplete="off">
-                            <input type="text" id="inp_diHo_horas_edit" class="form-control" placeholder="Hora..." autocomplete="off"> 
+                            <input type="text" id="inp_diHo_horas_edit" class="form-control" placeholder="Hora..." autocomplete="off">
                             <button type="button" id="btn_add_diasTurnoMed_edit" class="btn btn-block btn-theme-inverse"><strong>+</strong></button>
                         </div>
                     </div>
@@ -175,13 +175,30 @@
                     <hr>
                     <div class="form-group offset">
                         <div>
-                            <button type="submit"  class="btn btn-danger">Guardar Cambios</button>
+                            <button type="submit" class="btn btn-danger">Guardar Cambios</button>
                             <button type="reset" class="btn">Cancel</button>
                         </div>
                     </div>
                 </form>
             </div>
         </section>
+    </div>
+    <!-- //modal-body-->
+</div>
+<div id="md_deleteTurMed" class="modal fade md-stickTop">
+    <div class="modal-header" align='center'>
+        <h4 class="modal-title">Eliminar registro</h4>
+    </div>
+    <!-- //modal-header-->
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-lg-6" align='center'>
+                <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+            </div>
+            <div class="col-lg-6" align='center'>
+                <button class="btn btn-theme-inverse" id="btn_destroy_TurnMed_True">Confirmar</button>
+            </div>
+        </div>
     </div>
     <!-- //modal-body-->
 </div>

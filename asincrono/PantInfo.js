@@ -1,6 +1,7 @@
 // * VARIABLES DE INICIO
 turno = [];
 id_turMed_update = "";
+id_turMed_Delete = "";
 // *----
 
 function listTableMedTurn(data) {
@@ -32,7 +33,9 @@ function listTableMedTurn(data) {
                     <button class="btn btn-default btn-sm" onClick='turnMedEdit_1(${
                       e.id
                     })' title="Edit"><i class="fa fa-pencil"></i></button>
-                    <button class="btn btn-default btn-sm" title="Delete"><i class="fa fa-trash-o"></i></button>
+                    <button class="btn btn-default btn-sm" title="Delete" onClick='turnMedDelete_1(${
+                      e.id
+                    })'><i class="fa fa-trash-o"></i></button>
                 </span>
             </td>
         </tr>
@@ -162,13 +165,13 @@ $("#btn_add_diasTurnoMed_edit").click(function (e) {
   showList_modTableTurnMed1(2);
 });
 
-//* update turnos medico 
-$('#form_editTurnMed').submit(function (e) { 
+//* update turnos medico
+$("#form_editTurnMed").submit(function (e) {
   e.preventDefault();
   data = {
     _token: $("meta[name=csrf-token]").attr("content"),
 
-    idTM:id_turMed_update,
+    idTM: id_turMed_update,
     esp: $("#inp_turMed_esp_edit").val(),
     med: $("#inp_turMed_med_edit").val(),
     cot: $("#inp_turMed_cos_edit").val(),
@@ -185,6 +188,35 @@ $('#form_editTurnMed').submit(function (e) {
         notif("3", "Actualizado!");
         $("#form_editTurnMed").trigger("reset");
         $("#md_editTurMed").modal("hide");
+        listTableMedTurn();
+      } else {
+        notif("2", "Error!. ");
+      }
+    },
+  });
+});
+
+//* --------------Funciones para eliminar Turnos Medico
+function turnMedDelete_1(id) {
+  id_turMed_Delete = id;
+  $("#md_deleteTurMed").modal("show");
+}
+$("#btn_destroy_TurnMed_True").click(function (e) {
+  e.preventDefault();
+  data = {
+    _token: $("meta[name=csrf-token]").attr("content"),
+    idTM: id_turMed_Delete,
+  };
+  $.ajax({
+    type: "post",
+    url: "IndexPagPantInfo/destroy1",
+    data: data,
+    //  dataType: "dataType",
+    success: function (response) {
+      if (response) {
+        notif("3", "Eliminado Correctamente");
+        id_turMed_Delete = "";
+        $("#md_deleteTurMed").modal("hide");
         listTableMedTurn();
       } else {
         notif("2", "Error!. ");

@@ -60,8 +60,24 @@ class PantInfoController extends Controller
     {
         $res = pantInfo::where('id', $request->input('idTM'))->update(
             [
-                ''=>$request->input(''),
+                'pf_esp' => $request->input('esp'),
+                'pf_med' => $request->input('med'),
+                'pf_cos' => $request->input('cot'),
+                'pf_tur' => serialize($request->input('tur')),
+                'ca_usu_id' => Auth::user()->id,
+                'ca_tipo' => 'Update',
+                'ca_fecha' => Carbon::now(),
+                'ca_estado' => 1,
             ]
         );
+
+        return ($res) ? 1 : 0;
+    }
+
+    // *--------funciones para eliminar turno medico
+
+    public function destroy1(Request $request)
+    {
+        return pantInfo::where('id',$request->input('idTM'))->delete();
     }
 }

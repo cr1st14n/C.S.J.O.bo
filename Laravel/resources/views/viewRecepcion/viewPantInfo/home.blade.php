@@ -16,7 +16,10 @@
                             <div>
                                 <section class="form-group-vertical">
                                     <div class="input-icon"> <i class="fa fa-search  ico"></i>
-                                        <input class="form-control " type="text" placeholder="Buscar..." style="width:200px;">
+                                        <label>Filtrar por : </label>
+                                        <button class="btn btn-theme-inverse btn-transparent" onclick="btn_funListTypeOrder(1)">Medico</button>
+                                        <button class="btn btn-theme-inverse btn-transparent" onclick="btn_funListTypeOrder(2)">Especialidad</button>
+                                        <button class="btn btn-theme-inverse btn-transparent" onclick="btn_funListTypeOrder(3)">Fecha</button>
                                     </div>
                                 </section>
                             </div>

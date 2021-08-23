@@ -327,6 +327,7 @@
                         <td>Servicio de emergencias</td>
                         <td>24 horas</td>
                     </tr>
+                    <button onclick="act_tablaCOntenido_1()">123123</button>
 
                 </tbody>
             </table>
@@ -348,77 +349,13 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="{{ asset('assets/js/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/jquery.ui.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/plugins/bootstrap/bootstrap.min.js') }}"></script>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{ asset('/asincrono/PantInfo_pantallaTV.js') }}"></script>
 
-    <script language="JavaScript">
-        // * variables de modal 
-        min1 = 0;
-        min2 = 0;
-
-        // * variables de imagenes
-        dat_cont = 0;
-        dat_A = [{
-                ruta: "assets/img/pantalla/img_2.jpg"
-            },
-            {
-                ruta: "assets/img/pantalla/img_1.png"
-            },
-            {
-                ruta: "assets/img/pantalla/img_3.png"
-            },
-        ];
-
-        dat_TM = [
-            
-        ];
-
-
-
-        setInterval("mueveReloj()", 1000);
-
-        function mueveReloj() {
-            momentoActual = new Date()
-            hora = momentoActual.getHours()
-            minuto = momentoActual.getMinutes()
-            segundo = momentoActual.getSeconds()
-            if (minuto < 10) {
-                minuto = "0" + minuto;
-            }
-            if (segundo < 10) {
-                segundo = "0" + segundo;
-            }
-            horaImprimible = hora + " : " + minuto + ":" + segundo;
-            document.getElementById("horasis").innerText = horaImprimible
-
-            cont = minuto % 10;
-            if (cont == 0 || minuto < 0) {
-                min1 = minuto;
-                showModal();
-            }
-        }
-
-        function showModal() {
-            if (min1 != min2) {
-                document.getElementById('img_pub').src = dat_A[dat_cont].ruta;
-                console.log(dat_cont);
-                if (dat_A.length == dat_cont+1) {
-                    
-                    dat_cont = 0;
-                    console.log(dat_cont);
-                } else {
-                    dat_cont = dat_cont + 1;
-                }
-                $('.modalA').modal('show');
-                setTimeout(function() {
-                    $('.modalA').modal('hide');
-                }, 12000)
-            }
-            min2 = min1;
-        }
-    </script>
+  
 </body>
 
 </html>

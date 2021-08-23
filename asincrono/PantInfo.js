@@ -224,3 +224,8 @@ $("#btn_destroy_TurnMed_True").click(function (e) {
     },
   });
 });
+
+// *------------------Funcion para tipo de lista del turno demedicos
+function btn_funListTypeOrder(tipo) {
+  
+}

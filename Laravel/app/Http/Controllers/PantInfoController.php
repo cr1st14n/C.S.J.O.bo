@@ -80,4 +80,10 @@ class PantInfoController extends Controller
     {
         return pantInfo::where('id',$request->input('idTM'))->delete();
     }
+
+    // *------------funciones para pantalla de TV
+    public function pantallaListMed(Request $request)
+    {
+        return 'bla bla';
+    }
 }

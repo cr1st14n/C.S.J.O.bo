@@ -136,21 +136,19 @@
                         <td>70 Bs.-</td>
                     </tr>
                     <tr>
-                        <td>Ginecologia</td>
+                        <td rowspan="3"><p> Ginecologia</p></td>
                         <td>Dra. Galvez</td>
                         <td>L, Ma, Mi, V </td>
                         <td>Hrs 8:30 - 14:30</td>
                         <td>70 Bs.-</td>
                     </tr>
                     <tr>
-                        <td>Ginecologia</td>
                         <td>Dra. Cori</td>
                         <td>Ma. a V.</td>
                         <td>10:00 - 12:00</td>
                         <td>70 Bs.-</td>
                     </tr>
                     <tr>
-                        <td>Ginecologia</td>
                         <td>Dra. Mamani</td>
                         <td>L. a S. </td>
                         <td>14:00 a 18:00</td>
@@ -291,14 +289,13 @@
                         <td>70 Bs.-</td>
                     </tr>
                     <tr>
-                        <td>Urologia</td>
+                        <td rowspan="2">Urologia</td>
                         <td>Dr. Henning</td>
                         <td>J. </td>
                         <td>Previa cordinación </td>
                         <td>70 Bs.-</td>
                     </tr>
                     <tr>
-                        <td>Urologia</td>
                         <td>Dr. Candia</td>
                         <td>L. y V. </td>
                         <td>Hrs 10:00</td>

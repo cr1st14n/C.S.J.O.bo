@@ -29,27 +29,27 @@
             font-size: larger;
         }
 
-        #bod td:nth-child(1) {
+        .bod td:nth-child(1) {
             color: #E0BB82;
         }
 
-        #bod td:nth-child(2) {
+        .bod td:nth-child(2) {
             color: yellow;
         }
 
-        #bod td:nth-child(3) {
+        .bod td:nth-child(3) {
             color: #A5F998;
         }
 
-        #bod td:nth-child(4) {
+        .bod td:nth-child(4) {
             font-size: 18px;
         }
 
-        #bod tr:nth-child(even) {
+        .bod tr:nth-child(even) {
             background-color: #212121;
         }
 
-        #bod tr:nth-child(odd) {
+        .bod tr:nth-child(odd) {
             background-color: #0F0F0F;
         }
 
@@ -116,7 +116,7 @@
                         <th>Consulta</th>
                     </tr>
                 </thead>
-                <tbody id="bod">
+                <tbody id="bod1" class="bod">
                     <tr>
                         <td>Medicina Familiar</td>
                         <td>Dr. Montecinos</td>
@@ -211,7 +211,7 @@
                         <th>Consulta</th>
                     </tr>
                 </thead>
-                <tbody id="bod">
+                <tbody id="bod2" class="bod">
                     <tr>
                         <td>Medicina General</td>
                         <td>Dr. Huallani</td>
@@ -310,7 +310,7 @@
         <div class="col-lg-2">
             <table with=100% class="table table-sm" style="color: white;">
 
-                <tbody id="bod">
+                <tbody  class="bod">
                     <tr>
                         <td>Consulta de especialidades</td>
                         <td>70 Bs.-</td>

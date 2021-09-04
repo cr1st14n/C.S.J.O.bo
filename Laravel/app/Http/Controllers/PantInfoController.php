@@ -28,6 +28,7 @@ class PantInfoController extends Controller
                 'pf_esp' => $value['pf_esp'],
                 'pf_med' => $value['pf_med'],
                 'pf_tur' => unserialize($value['pf_tur']),
+                'pf_cos' => $value['pf_cos'],
                 'pf_fecha' => $value['ca_fecha'],
             ];
             array_push($d, $tr);
@@ -78,12 +79,25 @@ class PantInfoController extends Controller
 
     public function destroy1(Request $request)
     {
-        return pantInfo::where('id',$request->input('idTM'))->delete();
+        return pantInfo::where('id', $request->input('idTM'))->delete();
     }
 
     // *------------funciones para pantalla de TV
     public function pantallaListMed(Request $request)
     {
-        return 'bla bla';
+        $d = [];
+        $variable = pantInfo::get();
+        foreach ($variable as $key => $value) {
+            $tr = [
+                'id' => $value['id'],
+                'pf_esp' => $value['pf_esp'],
+                'pf_med' => $value['pf_med'],
+                'pf_cos' => $value['pf_cos'],
+                'pf_tur' => unserialize($value['pf_tur']),
+                'pf_fecha' => $value['ca_fecha'],
+            ];
+            array_push($d, $tr);
+        }
+        return $d;
     }
 }

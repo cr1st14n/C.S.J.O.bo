@@ -32,6 +32,7 @@
                                     <th>Especialidad</th>
                                     <th>Medico</th>
                                     <th>Turno</th>
+                                    <th>Costo</th>
                                     <th>Fecha edicion</th>
                                     <th width="10%">Action</th>
                                 </tr>

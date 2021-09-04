@@ -27,6 +27,7 @@ function listTableMedTurn(data) {
             <td>${e.pf_esp}</td>
             <td valign="middle">${e.pf_med}</td>
             <td>${html2}</td>
+            <td>${e.pf_cos}</td>
             <td>${moment(e.ca_fecha).format("DD/MM/YYYY")}</td>
             <td>
                 <span class="tooltip-area">

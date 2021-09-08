@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
         body {
             margin-left: 40px;
@@ -136,7 +135,9 @@
                         <td>70 Bs.-</td>
                     </tr>
                     <tr>
-                        <td rowspan="3"><p> Ginecologia</p></td>
+                        <td rowspan="3">
+                            <p> Ginecologia</p>
+                        </td>
                         <td>Dra. Galvez</td>
                         <td>L, Ma, Mi, V </td>
                         <td>Hrs 8:30 - 14:30</td>
@@ -307,7 +308,7 @@
         <div class="col-lg-2">
             <table with=100% class="table table-sm" style="color: white;">
 
-                <tbody  class="bod">
+                <tbody class="bod">
                     <tr>
                         <td>Consulta de especialidades</td>
                         <td>70 Bs.-</td>
@@ -324,35 +325,34 @@
                         <td>Servicio de emergencias</td>
                         <td>24 horas</td>
                     </tr>
-                    <button onclick="showModal()">123123</button>
-
                 </tbody>
             </table>
         </div>
     </div>
 
     <!-- Modal -->
-    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example">Small modal</button> -->
+    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#md-321">Small modal</button> -->
 
     <div class="modal fade modalA" id="modalA" tabindex="-1" role="dialog">
+        <img id="img_pub" src="" alt="" width="90%" height="90%" style="border:90px solid  transparent ">
         <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                 </div>
                 <div class="modal-body">
-                    <img id="img_pub" src="assets/img/pantalla/pampaña-9-21_1.jpeg" alt="">
 
                 </div>
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="{{ asset('assets/js/jquery.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/jquery.ui.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/plugins/bootstrap/bootstrap.min.js') }}"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <script type="text/javascript" src="{{ asset('/asincrono/PantInfo_pantallaTV.js') }}"></script>
 
-  
+
 </body>
 
 </html>

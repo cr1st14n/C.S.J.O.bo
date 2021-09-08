@@ -15,13 +15,13 @@ dat_A = [
   //   ruta: "assets/img/pantalla/img_3.png",
   // },
   {
-    ruta: "assets/img/pantalla/pampaña-9-21_1.jpeg",
+    ruta: "assets/img/pantalla/CAMPAÑA_1.png",
   },
   {
-    ruta: "assets/img/pantalla/pampaña-9-21_2.jpeg",
+    ruta: "assets/img/pantalla/CAMPAÑA_1_1.png",
   },
   {
-    ruta: "assets/img/pantalla/pampaña-9-21_3.jpeg",
+    ruta: "assets/img/pantalla/img_1.jpg",
   },
 ];
 
@@ -45,7 +45,7 @@ function mueveReloj() {
 
   cont = minuto % 10;
   // console.log(cont);
-  if (cont == 0 || minuto < 0) {
+  if (cont == 0 || minuto < 0 ) {
     min1 = minuto;
     showModal();
     // act_tablaCOntenido_1()
@@ -53,7 +53,6 @@ function mueveReloj() {
 }
 
 function showModal() {
-  $("#modaleA").modal("show");
 
   if (min1 != min2) {
   console.log('se mostrara');

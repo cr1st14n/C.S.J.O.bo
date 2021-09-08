@@ -5,14 +5,23 @@ min2 = 0;
 // * variables de imagenes
 dat_cont = 0;
 dat_A = [
+  // {
+  //   ruta: "assets/img/pantalla/img_2.jpg",
+  // },
+  // {
+  //   ruta: "assets/img/pantalla/img_1.png",
+  // },
+  // {
+  //   ruta: "assets/img/pantalla/img_3.png",
+  // },
   {
-    ruta: "assets/img/pantalla/img_2.jpg",
+    ruta: "assets/img/pantalla/pampaña-9-21_1.jpeg",
   },
   {
-    ruta: "assets/img/pantalla/img_1.png",
+    ruta: "assets/img/pantalla/pampaña-9-21_2.jpeg",
   },
   {
-    ruta: "assets/img/pantalla/img_3.png",
+    ruta: "assets/img/pantalla/pampaña-9-21_3.jpeg",
   },
 ];
 
@@ -35,15 +44,20 @@ function mueveReloj() {
   document.getElementById("horasis").innerText = horaImprimible;
 
   cont = minuto % 10;
+  // console.log(cont);
   if (cont == 0 || minuto < 0) {
     min1 = minuto;
     showModal();
-    act_tablaCOntenido_1()
+    // act_tablaCOntenido_1()
   }
 }
 
 function showModal() {
+  $("#modaleA").modal("show");
+
   if (min1 != min2) {
+  console.log('se mostrara');
+
     document.getElementById("img_pub").src = dat_A[dat_cont].ruta;
     console.log(dat_cont);
     if (dat_A.length == dat_cont + 1) {

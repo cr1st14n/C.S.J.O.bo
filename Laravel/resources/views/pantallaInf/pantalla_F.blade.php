@@ -324,7 +324,7 @@
                         <td>Servicio de emergencias</td>
                         <td>24 horas</td>
                     </tr>
-                    <button onclick="act_tablaCOntenido_1()">123123</button>
+                    <button onclick="showModal()">123123</button>
 
                 </tbody>
             </table>
@@ -334,13 +334,13 @@
     <!-- Modal -->
     <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example">Small modal</button> -->
 
-    <div class="modal fade modalA" tabindex="-1" role="dialog">
+    <div class="modal fade modalA" id="modalA" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                 </div>
                 <div class="modal-body">
-                    <img id="img_pub" src="" alt="">
+                    <img id="img_pub" src="assets/img/pantalla/pampaña-9-21_1.jpeg" alt="">
 
                 </div>
             </div>

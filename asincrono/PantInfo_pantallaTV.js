@@ -21,7 +21,7 @@ dat_A = [
     ruta: "assets/img/pantalla/CAMPAÑA_1_1.png",
   },
   {
-    ruta: "assets/img/pantalla/img_1.jpg",
+    ruta: "assets/img/pantalla/img_1.png",
   },
 ];
 

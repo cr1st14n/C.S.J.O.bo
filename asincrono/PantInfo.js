@@ -15,31 +15,36 @@ function listTableMedTurn(data) {
       console.log(response);
       var html = response
         .map(function (e) {
-          var html2 = e.pf_tur
-            .map(function (a, b, c) {
-              return (a = `
+          console.log(e.pf_tur);
+          if (e.pf_tur == null) {
+            html2 = "";
+          } else {
+            var html2 = e.pf_tur
+              .map(function (a, b, c) {
+                return (a = `
                 ${a[0].dias} - ${a[0].hora} 
                 <br>`);
-            })
-            .join(" ");
+              })
+              .join(" ");
+          }
           return (a = `
-        <tr>
-            <td>${e.pf_esp}</td>
-            <td valign="middle">${e.pf_med}</td>
-            <td>${html2}</td>
-            <td>${e.pf_cos}</td>
-            <td>${moment(e.ca_fecha).format("DD/MM/YYYY")}</td>
-            <td>
-                <span class="tooltip-area">
-                    <button class="btn btn-default btn-sm" onClick='turnMedEdit_1(${
-                      e.id
-                    })' title="Edit"><i class="fa fa-pencil"></i></button>
-                    <button class="btn btn-default btn-sm" title="Delete" onClick='turnMedDelete_1(${
-                      e.id
-                    })'><i class="fa fa-trash-o"></i></button>
-                </span>
-            </td>
-        </tr>
+            <tr>
+                <td>${e.pf_esp}</td>
+                <td valign="middle">${e.pf_med}</td>
+                <td>${html2}</td>
+                <td>${e.pf_cos}</td>
+                <td>${moment(e.ca_fecha).format("DD/MM/YYYY")}</td>
+                <td>
+                    <span class="tooltip-area">
+                        <button class="btn btn-default btn-sm" onClick='turnMedEdit_1(${
+                          e.id
+                        })' title="Edit"><i class="fa fa-pencil"></i></button>
+                        <button class="btn btn-default btn-sm" title="Delete" onClick='turnMedDelete_1(${
+                          e.id
+                        })'><i class="fa fa-trash-o"></i></button>
+                    </span>
+                </td>
+            </tr>
         `);
         })
         .join(" ");
@@ -94,19 +99,25 @@ function showList_modTableTurnMed1(tipo) {
   if (tipo == 2) {
     modal_name = "#" + "tableModalListTurnHoras_edit";
   }
-  for (let i = 0; i < turno.length; i++) {
-    const element = turno[i];
-    var htmlt1 = `
-        <tr>
-            <td valign="middle">${element[0].dias}</td>
-            <td valign="middle">${element[0].hora}</td>
-            <td>
-                <span class="tooltip-area">
-                    <a onClick=deleteTurnoMed_modal(${i}) class="btn btn-default btn-sm" title="Delete"><i class="fa fa-trash-o"></i></a>
-                </span>
-            </td>
-        </tr>`;
-    $(modal_name).append(htmlt1);
+  if (turno == null) {
+    htmlt1 = "";
+  } else {
+    for (let i = 0; i < turno.length; i++) {
+      const element = turno[i];
+      par = i + "," + tipo;
+      var htmlt1 = `
+          <tr>
+              <td valign="middle">${element[0].dias}</td>
+              <td valign="middle">${element[0].hora}</td>
+              <td>
+                  <span class="tooltip-area">
+                      <a onClick="deleteTurnoMed_modal(${par})" class="btn btn-default btn-sm" title="Delete"><i class="fa fa-trash-o"></i></a>
+                  </span>
+              </td>
+          </tr>`;
+      console.log(i, tipo);
+      $(modal_name).append(htmlt1);
+    }
   }
 }
 
@@ -147,11 +158,11 @@ function showMdEditTurMed_1(data) {
 //*----------MODAL EDITAR TUR MED
 
 // * funcion eliminar turMed de list modal
-function deleteTurnoMed_modal(ind) {
-  console.log(ind);
+function deleteTurnoMed_modal(ind, tipo) {
+  console.log(tipo);
   turno.splice(ind, 1);
   console.log(turno);
-  $("#tableModalListTurnHoras_edit").html("");
+  $("#tableModalListTurnHoras_edit").html(" ");
   showList_modTableTurnMed1(2);
 }
 
@@ -162,6 +173,7 @@ $("#btn_add_diasTurnoMed_edit").click(function (e) {
   d = $("#inp_diHo_dias_edit").val();
   h = $("#inp_diHo_horas_edit").val();
   a = [{ dias: d, hora: h }];
+  console.log(a);
   turno.push(a);
   showList_modTableTurnMed1(2);
 });
@@ -227,6 +239,4 @@ $("#btn_destroy_TurnMed_True").click(function (e) {
 });
 
 // *------------------Funcion para tipo de lista del turno demedicos
-function btn_funListTypeOrder(tipo) {
-  
-}
+function btn_funListTypeOrder(tipo) {}

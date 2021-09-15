@@ -63,7 +63,7 @@
             <div class="account-wall">
                 <section class="align-lg-center">
                 <div class="site-logo"></div>
-                <h1 class="login-title"><span>SISTEMA ADMINISTRATIVO </span><br> C.S.J.O. <small> Vercion 1.0</small></h1>
+                <h1 class="login-title"><span>SISTEMA ADMINISTRATIVO </span><br> C.S.J.O. <small> Vercion 1.5</small></h1>
                 </section>
                 <form id="form-signin" class="form-signin"  method="POST" action="{{ route('login') }}">
                      {{ csrf_field() }}

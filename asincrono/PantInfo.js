@@ -5,17 +5,17 @@ id_turMed_Delete = "";
 // *----
 
 function listTableMedTurn(data) {
-  console.log("loisto para consultar");
+  // console.log("loisto para consultar");
   $.ajax({
     type: "GET",
     url: "IndexPagPantInfo/listData1",
     // data: "data",
     // dataType: "dataType",
     success: function (response) {
-      console.log(response);
+      // console.log(response);
       var html = response
         .map(function (e) {
-          console.log(e.pf_tur);
+          // console.log(e.pf_tur);
           if (e.pf_tur == null) {
             html2 = "";
           } else {
@@ -63,7 +63,7 @@ $("#btn_addTurnMed").click(function (e) {
 // * VALIDAR Y REGISTRAR
 $("#form_createTurnMed").submit(function (e) {
   e.preventDefault();
-  console.log("se creara");
+  // console.log("se creara");
   data = {
     _token: $("meta[name=csrf-token]").attr("content"),
 
@@ -99,6 +99,7 @@ function showList_modTableTurnMed1(tipo) {
   if (tipo == 2) {
     modal_name = "#" + "tableModalListTurnHoras_edit";
   }
+  $(modal_name).html(" ");
   if (turno == null) {
     htmlt1 = "";
   } else {
@@ -115,7 +116,7 @@ function showList_modTableTurnMed1(tipo) {
                   </span>
               </td>
           </tr>`;
-      console.log(i, tipo);
+      // console.log(i, tipo);
       $(modal_name).append(htmlt1);
     }
   }
@@ -123,6 +124,7 @@ function showList_modTableTurnMed1(tipo) {
 
 $("#btn_add_diasTurnoMed").click(function (e) {
   e.preventDefault();
+  // $("#tableModalListTurnHoras").html("");
   d = $("#inp_diHo_dias").val();
   h = $("#inp_diHo_horas").val();
   a = [{ dias: d, hora: h }];
@@ -143,8 +145,12 @@ function turnMedEdit_1(id) {
 }
 
 function showMdEditTurMed_1(data) {
-  turno = data.turnos;
-  $("#tableModalListTurnHoras_edit").html("");
+  // console.log(data.turnos);
+  if (data.turnos==null) {
+    turno = [];
+  } else {
+    turno = data.turnos;
+  }
   showList_modTableTurnMed1(2);
 
   id_turMed_update = data.data1.id;
@@ -159,11 +165,13 @@ function showMdEditTurMed_1(data) {
 
 // * funcion eliminar turMed de list modal
 function deleteTurnoMed_modal(ind, tipo) {
-  console.log(tipo);
   turno.splice(ind, 1);
-  console.log(turno);
-  $("#tableModalListTurnHoras_edit").html(" ");
-  showList_modTableTurnMed1(2);
+  if (tipo==1) {
+    $("#tableModalListTurnHoras").html(" ");
+  } else if(tipo==2){
+    $("#tableModalListTurnHoras_edit").html(" ");
+  }
+  showList_modTableTurnMed1(tipo);
 }
 
 $("#btn_add_diasTurnoMed_edit").click(function (e) {
@@ -173,7 +181,7 @@ $("#btn_add_diasTurnoMed_edit").click(function (e) {
   d = $("#inp_diHo_dias_edit").val();
   h = $("#inp_diHo_horas_edit").val();
   a = [{ dias: d, hora: h }];
-  console.log(a);
+  // console.log(a);
   turno.push(a);
   showList_modTableTurnMed1(2);
 });
@@ -196,7 +204,7 @@ $("#form_editTurnMed").submit(function (e) {
     data: data,
     //   dataType: "dataType",
     success: function (response) {
-      console.log(response);
+      // console.log(response);
       if (response) {
         notif("3", "Actualizado!");
         $("#form_editTurnMed").trigger("reset");

@@ -101,7 +101,7 @@ $('#btn_index_descargosQuiEndo').on('click', function () {
 $("#btn_index_pagPantInfo").on("click", function () {
   $.ajax({
     type: "GET",
-    url: "IndexPagPantInfo",
+    url: "/C.S.J.O.bo/Recepcion/IndexPagPantInfo",
     // data: "data",
     // dataType: "dataType",
     success: function (response) {
@@ -111,5 +111,7 @@ $("#btn_index_pagPantInfo").on("click", function () {
       }, 1000);
     },
   });
+  // location.replace('/C.S.J.O.bo/Recepcion/IndexPagPantInfo');
+  history.pushState(null, "", "/C.S.J.O.bo/Recepcion/IndexPagPantInfo");
 });
 

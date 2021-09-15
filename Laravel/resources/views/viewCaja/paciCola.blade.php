@@ -14,7 +14,7 @@
 		<div class="panel-body">
 				<form class="navbar-form navbar-left"   >
             		<button type="submit" class="btn btn-theme-inverse"  ><a href="{{route('pacientes_cola')}} "></a>Actualizar</button>  
-            		{{--<button type="button" class="btn btn-theme-inverse" onclick="actListPaciCola()" >Actualizar</button>--}}
+            		<button type="button" class="btn btn-theme-inverse" onclick="actListPaciCola()" >Actualizar</button>
        			</form>
 			<div class="table-responsive">
 				<table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped">
@@ -65,7 +65,7 @@
 </div>
 @endsection
 @section('scripts')
-	{{--<script type="text/javascript" src="{{ asset('/asincrono/cajaPC.js') }}"></script>--}}
+<script type="text/javascript" src="{{ asset('/asincrono/cajaPC.js') }}"></script>
 	<script type="text/javascript">
 
     function fnShowHide( iCol , table){

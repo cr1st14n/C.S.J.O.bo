@@ -23,4 +23,13 @@ function listPaciCola(data) {
 }
 function actListPaciCola() {
     console.log("actualizar lista");
+    $.ajax({
+        type: "get",
+        url: "",
+        data: "data",
+        dataType: "dataType",
+        success: function (response) {
+            
+        }
+    });
 }

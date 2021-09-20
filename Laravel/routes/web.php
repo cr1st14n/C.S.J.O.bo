@@ -199,6 +199,9 @@ Route::group(['middleware' => ['caja'], 'prefix' => '/caja'], function () {
 	Route::get('reportes', 'cajaController@reportes')->name('caja_reporte');
 	Route::any('reporteDiario_Imprimir', 'cajaController@reporteDiario')->name('reporteDiario');
 	Route::any('reporteMensual', 'cajaController@reporteMensual')->name('reporteMensual');
+// *--  ajax
+	Route::get('pacEsp_1','cajaController@pacEsp_1');
+
 });
 
 //---------------RRHH------//

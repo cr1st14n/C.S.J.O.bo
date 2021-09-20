@@ -9,7 +9,7 @@
 <div class="col-lg-12">
 	<section class="panel">
 		<header class="panel-heading">
-					<h2>Pacientes en fila </h2>
+					<h2>Pacientes en fila</h2>
 		</header>
 		<div class="panel-body">
 				<form class="navbar-form navbar-left"   >

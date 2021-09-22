@@ -432,4 +432,16 @@ class cajaController extends Controller
             ->get();
         return $PC;
     }
+    public function pago_1(Request $request)
+    {
+        $pago = atencion::where('id', $request->input("id"))->value('ate_pago');
+        if ($pago == 'pendiente') {
+            $resul = atencion::where('id', $request->input("id"))->update(['ate_pago' => 'cancelado']);
+            $tipo=1;
+        } elseif ($pago == 'cancelado') {
+            $resul = atencion::where('id', $request->input("id"))->update(['ate_pago' => 'pendiente']);
+            $tipo=0;
+        }
+        return ['resul'=>$resul,'tipo'=>$tipo,'id'=>$request->input("id"),];
+    }
 }

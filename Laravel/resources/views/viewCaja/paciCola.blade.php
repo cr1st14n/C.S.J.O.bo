@@ -33,7 +33,7 @@
 								<th width="">PAGO</th>
 							</tr>
 						</thead>
-						<tbody align="center">
+						<tbody align="center" id="body_table_paciCola">
          					@foreach ($PC as $PC)
          					<tr>
              					<th>{{ $PC->pa_hcl }} </th>

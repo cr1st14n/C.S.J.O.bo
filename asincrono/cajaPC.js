@@ -24,6 +24,7 @@ function listPaciCola(data) {
                 </tr>`;
   });
 }
+
 function actListPaciCola() {
   console.log("asdfactualizar lista");
   $.ajax({
@@ -34,12 +35,11 @@ function actListPaciCola() {
     success: function (response) {
       console.log(response);
       html_table_contend = response.map(function (PC) {
-
-        est_1 = '';
+        est_1 = "";
         if (PC.ate_pago == "pendiente") {
           est_1 = `<span class="label label-warning">Pendiente</span>`;
         } else {
-          est_1 = `<span class="label label-warning">Cancelado</span>`;
+          est_1 = `<span class="label label-success">Cancelado</span>`;
         }
 
         return (h = `
@@ -53,7 +53,7 @@ function actListPaciCola() {
                     <TH>${PC.ate_num_ticked}</TH>
                     <TH>${PC.time_at}</TH>
                     <th>${PC.ate_turno}</th>
-                    <th>${est_1}</th>
+                    <th id="body_table_paciCola_${PC.id}">${est_1}</th>
                     <td>
                         <span class="tooltip-area">
                         <button type="button" onClick="pago_realizar(${PC.id}) " class="btn btn-default btn-sm" title="ON/OFF"><i class="fa  fa-thumb-tack"></i></button>
@@ -63,6 +63,31 @@ function actListPaciCola() {
                 </tr>
                 `);
       });
+      // console.log(html_table_contend);
+      $("#body_table_paciCola").html("");
+      $("#body_table_paciCola").html(html_table_contend);
     },
+  });
+}
+// *============
+function pago_realizar(idAte) {
+  $.ajax({
+    type: "post",
+    url: "pago_1",
+    data: { _token: $('meta[name=csrf-token]').attr('content'), id:idAte,},
+    // dataType: "dataType",
+    success: function (response) {
+      console.log(response);
+      if (response) {
+        if (response.tipo==1) {
+          ht='<span class="label label-success">Cancelado</span>';
+        } else {
+          ht='<span class="label label-warning">Pendiente</span>';
+        }
+        $('#body_table_paciCola_'+response.id).html(ht);
+      } else {
+        notif('4','Error!')
+      }
+    }
   });
 }

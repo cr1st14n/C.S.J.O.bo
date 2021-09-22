@@ -201,7 +201,7 @@ Route::group(['middleware' => ['caja'], 'prefix' => '/caja'], function () {
 	Route::any('reporteMensual', 'cajaController@reporteMensual')->name('reporteMensual');
 // *--  ajax
 	Route::get('pacEsp_1','cajaController@pacEsp_1');
-
+	Route::post('pago_1', 'cajaController@pago_1');
 });
 
 //---------------RRHH------//

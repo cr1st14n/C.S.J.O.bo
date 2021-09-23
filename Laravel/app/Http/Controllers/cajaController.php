@@ -11,7 +11,7 @@ use DB;
 use Carbon\Carbon;
 use App\atencion;
 use App\personalSalud;
-
+use Illuminate\Support\Facades\Input;
 
 class cajaController extends Controller
 {
@@ -419,17 +419,34 @@ class cajaController extends Controller
         ]);
     }
     // *----- QUERY AJAX 
-    public function pacEsp_1()
+    public function pacEsp_1(Request $request)
     {
-        $date = Carbon::now();
-        $date = $date->format('Y-m-d');
-        $PC = atencion::where('ate_fecha', $date)
-            ->join('pacientes', 'pacientes.pa_id', '=', 'atencion.pa_id')
-            ->join('especialidad', 'especialidad.id', '=', 'atencion.ate_especialidad')
-            ->join('personalSalud', 'personalSalud.id', '=', 'atencion.ate_med')
-            ->addSelect('atencion.*', 'especialidad.nombre', 'pacientes.pa_nombre', 'pacientes.pa_appaterno', 'pacientes.pa_apmaterno', 'pacientes.pa_ci', 'pacientes.pa_hcl', 'personalSalud.ps_appaterno', 'personalSalud.ps_apmaterno', 'personalSalud.ps_nombre')
-            ->latest('atencion.created_at')
-            ->get();
+        // return $request->input('datosS')['cont'];
+
+        if ($request->input('datosS')['cont'] == 0) {
+            $date = Carbon::now();
+            $date = $date->format('Y-m-d');
+            $PC = atencion::where('ate_fecha', $date)
+                ->join('pacientes', 'pacientes.pa_id', '=', 'atencion.pa_id')
+                ->join('especialidad', 'especialidad.id', '=', 'atencion.ate_especialidad')
+                ->join('personalSalud', 'personalSalud.id', '=', 'atencion.ate_med')
+                ->addSelect('atencion.*', 'especialidad.nombre', 'pacientes.pa_nombre', 'pacientes.pa_appaterno', 'pacientes.pa_apmaterno', 'pacientes.pa_ci', 'pacientes.pa_hcl', 'personalSalud.ps_appaterno', 'personalSalud.ps_apmaterno', 'personalSalud.ps_nombre')
+                ->latest('atencion.created_at')
+                ->get();
+        } else {
+            $date = Carbon::now();
+            $date = $date->format('Y-m-d');
+            $PC = atencion::where('ate_fecha', $date)
+                ->whereColumn('atencion.id', '>', $request->input('datosS')['cont'])
+                ->join('pacientes', 'pacientes.pa_id', '=', 'atencion.pa_id')
+                ->join('especialidad', 'especialidad.id', '=', 'atencion.ate_especialidad')
+                ->join('personalSalud', 'personalSalud.id', '=', 'atencion.ate_med')
+                ->addSelect('atencion.*', 'especialidad.nombre', 'pacientes.pa_nombre', 'pacientes.pa_appaterno', 'pacientes.pa_apmaterno', 'pacientes.pa_ci', 'pacientes.pa_hcl', 'personalSalud.ps_appaterno', 'personalSalud.ps_apmaterno', 'personalSalud.ps_nombre')
+                ->latest('atencion.created_at')
+                ->get();
+        }
+
+
         return $PC;
     }
     public function pago_1(Request $request)
@@ -437,11 +454,11 @@ class cajaController extends Controller
         $pago = atencion::where('id', $request->input("id"))->value('ate_pago');
         if ($pago == 'pendiente') {
             $resul = atencion::where('id', $request->input("id"))->update(['ate_pago' => 'cancelado']);
-            $tipo=1;
+            $tipo = 1;
         } elseif ($pago == 'cancelado') {
             $resul = atencion::where('id', $request->input("id"))->update(['ate_pago' => 'pendiente']);
-            $tipo=0;
+            $tipo = 0;
         }
-        return ['resul'=>$resul,'tipo'=>$tipo,'id'=>$request->input("id"),];
+        return ['resul' => $resul, 'tipo' => $tipo, 'id' => $request->input("id"),];
     }
 }

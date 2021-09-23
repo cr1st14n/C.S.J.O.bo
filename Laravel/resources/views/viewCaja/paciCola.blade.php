@@ -17,7 +17,7 @@
             		<button type="button" class="btn btn-theme-inverse" onclick="actListPaciCola()" >Actualizar</button>
        			</form>
 			<div class="table-responsive">
-				<table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped">
+				<table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped" id="body_table_paciCola_1er">
 						<thead>
 							<tr>
 								<th>HCL</th>

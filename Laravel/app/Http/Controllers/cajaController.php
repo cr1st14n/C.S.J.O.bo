@@ -421,9 +421,9 @@ class cajaController extends Controller
     // *----- QUERY AJAX 
     public function pacEsp_1(Request $request)
     {
-        // return $request->input('datosS')['cont'];
+        // return $request->input('cont');
 
-        if ($request->input('datosS')['cont'] == 0) {
+        if ($request->input('cont') == 0) {
             $date = Carbon::now();
             $date = $date->format('Y-m-d');
             $PC = atencion::where('ate_fecha', $date)
@@ -437,7 +437,7 @@ class cajaController extends Controller
             $date = Carbon::now();
             $date = $date->format('Y-m-d');
             $PC = atencion::where('ate_fecha', $date)
-                ->whereColumn('atencion.id', '>', $request->input('datosS')['cont'])
+                ->where('atencion.id', '>', $request->input('cont'))
                 ->join('pacientes', 'pacientes.pa_id', '=', 'atencion.pa_id')
                 ->join('especialidad', 'especialidad.id', '=', 'atencion.ate_especialidad')
                 ->join('personalSalud', 'personalSalud.id', '=', 'atencion.ate_med')

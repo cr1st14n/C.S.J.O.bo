@@ -36,7 +36,7 @@ function actListPaciCola() {
   } else {
     datosS={cont:contFila};
   }
-  console.log(contFila);
+  console.log(datosS);
   $.ajax({
     type: "get",
     url: "pacEsp_1",
@@ -44,6 +44,7 @@ function actListPaciCola() {
     // dataType: "Array",
     success: function (response) {
       console.log(response);
+      
       contFila=response[0].id;
       html_table_contend = response.map(function (PC) {
         est_1 = "";

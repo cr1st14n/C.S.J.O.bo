@@ -88,6 +88,7 @@ function actListPaciCola() {
   });
 }
 
+
 {/* <a href="{{route('ate_pago',$PC->id)}} " class="btn btn-default btn-sm" title="ON/OFF"><i class="fa  fa-thumb-tack"></i></a> */}
 
 // *============

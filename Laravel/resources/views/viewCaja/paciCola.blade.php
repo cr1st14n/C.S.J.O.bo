@@ -13,7 +13,7 @@
 		</header>
 		<div class="panel-body">
 				<form class="navbar-form navbar-left"   >
-            		<button type="submit" class="btn btn-theme-inverse"  ><a href="{{route('pacientes_cola')}} "></a>Actualizar</button>  
+            		<!-- <button type="submit" class="btn btn-theme-inverse"  ><a href="{{route('pacientes_cola')}} "></a>Actualizar</button>   -->
             		<button type="button" class="btn btn-theme-inverse" onclick="actListPaciCola()" >Actualizar</button>
        			</form>
 			<div class="table-responsive">
@@ -34,7 +34,7 @@
 							</tr>
 						</thead>
 						<tbody align="center" id="body_table_paciCola">
-         					@foreach ($PC as $PC)
+         					<!-- @foreach ($PC as $PC)
          					<tr>
              					<th>{{ $PC->pa_hcl }} </th>
              					<th>{{ $PC->pa_ci}} </th>
@@ -56,7 +56,7 @@
 									</span>
 								</td>
 							</tr>
-							@endforeach
+							@endforeach -->
 						</tbody>
 				</table>
 			</div>

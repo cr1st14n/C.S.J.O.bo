@@ -45,7 +45,6 @@ function actListPaciCola() {
     success: function (response) {
       console.log(response);
       
-      contFila=response[0].id;
       html_table_contend = response.map(function (PC) {
         est_1 = "";
         if (PC.ate_pago == "pendiente") {
@@ -69,22 +68,28 @@ function actListPaciCola() {
         <td>
         <span class="tooltip-area">
         <button type="button" onClick="pago_realizar(${PC.id}) " class="btn btn-default btn-sm" title="ON/OFF"><i class="fa  fa-thumb-tack"></i></button>
-        <a href="{{route('ate_pago',$PC->id)}} " class="btn btn-default btn-sm" title="ON/OFF"><i class="fa  fa-thumb-tack"></i></a>
         </span>
         </td>
         </tr>
         `);
       });
       console.log(html_table_contend);
+      console.log(contFila);
       if (contFila == 0) {
         $("#body_table_paciCola").html("");
         $("#body_table_paciCola").html(html_table_contend);
       } else {
         $("#body_table_paciCola_1er > tbody:last-child").after(html_table_contend);
       }
+      if (response == []) {
+        contFila=response[0].id;
+      } 
     },
   });
 }
+
+{/* <a href="{{route('ate_pago',$PC->id)}} " class="btn btn-default btn-sm" title="ON/OFF"><i class="fa  fa-thumb-tack"></i></a> */}
+
 // *============
 function pago_realizar(idAte) {
   $.ajax({

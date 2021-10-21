@@ -1,40 +1,40 @@
 @extends('layouts.CajaLay')
 @section('refUbi')
 <ol class="breadcrumb">
-    <li><a href="#">Caja</a></li>
-    <li class="active">Pacientes en fila</li>
+	<li><a href="#">Caja</a></li>
+	<li class="active">Pacientes en fila</li>
 </ol>
 @endsection
 @section('content')
 <div class="col-lg-12">
 	<section class="panel">
 		<header class="panel-heading">
-					<h2>Pacientes en fila</h2>
+			<h2>Pacientes en fila</h2>
 		</header>
 		<div class="panel-body">
-				<form class="navbar-form navbar-left"   >
-            		<!-- <button type="submit" class="btn btn-theme-inverse"  ><a href="{{route('pacientes_cola')}} "></a>Actualizar</button>   -->
-            		<button type="button" class="btn btn-theme-inverse" onclick="actListPaciCola()" >Actualizar</button>
-       			</form>
+			<form class="navbar-form navbar-left">
+				<!-- <button type="submit" class="btn btn-theme-inverse"  ><a href="{{route('pacientes_cola')}} "></a>Actualizar</button>   -->
+				<button type="button" class="btn btn-theme-inverse" onclick="actListPaciCola()">Actualizar</button>
+			</form>
 			<div class="table-responsive">
 				<table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped" id="body_table_paciCola_1er">
-						<thead>
-							<tr>
-								<th>HCL</th>
-								<th>CI</th>
-								<th>NOMBRE</th>
-								<th>ESPECIALIDAD</th>
-                                <th>MEDICO</th>
-								<th>PROCEDIMIENTO</th>
-                                <th># DE FICHA</th>
-                                <th>HORA</th>
-								<th>TURNO</th>
-								<th>ESTADO DE PAGO</th>
-								<th width="">PAGO</th>
-							</tr>
-						</thead>
-						<tbody align="center" id="body_table_paciCola">
-         					<!-- @foreach ($PC as $PC)
+					<thead>
+						<tr>
+							<th>HCL</th>
+							<th>CI</th>
+							<th>NOMBRE</th>
+							<th>ESPECIALIDAD</th>
+							<th>MEDICO</th>
+							<th>PROCEDIMIENTO</th>
+							<th># DE FICHA</th>
+							<th>HORA</th>
+							<th>TURNO</th>
+							<th>ESTADO DE PAGO</th>
+							<th width="">PAGO</th>
+						</tr>
+					</thead>
+					<tbody align="center" id="body_table_paciCola">
+						<!-- @foreach ($PC as $PC)
          					<tr>
              					<th>{{ $PC->pa_hcl }} </th>
              					<th>{{ $PC->pa_ci}} </th>
@@ -57,7 +57,7 @@
 								</td>
 							</tr>
 							@endforeach -->
-						</tbody>
+					</tbody>
 				</table>
 			</div>
 		</div>
@@ -66,71 +66,65 @@
 @endsection
 @section('scripts')
 <script type="text/javascript" src="{{ asset('/asincrono/cajaPC.js') }}"></script>
-	<script type="text/javascript">
+<script type="text/javascript" src="{{ asset('/asincrono/homeJs.js') }}"></script>
+<script type="text/javascript">
+	function fnShowHide(iCol, table) {
+		var oTable = $(table).dataTable();
+		var bVis = oTable.fnSettings().aoColumns[iCol].bVisible;
+		oTable.fnSetColumnVis(iCol, bVis ? false : true);
+	}
 
-    function fnShowHide( iCol , table){
-        var oTable = $(table).dataTable(); 
-        var bVis = oTable.fnSettings().aoColumns[iCol].bVisible;
-        oTable.fnSetColumnVis( iCol, bVis ? false : true );
-    }
+	$(function() {
 
-    $(function() {
-        
-        //////////     DATA TABLE  COLUMN TOGGLE    //////////
-        $('[data-table="table-toggle-column"]').each(function(i) {
-                var data=$(this).data(), 
-                table=$(this).data("table-target"), 
-                dropdown=$(this).parent().find(".dropdown-menu"),
-                col=new Array;
-                $(table).find("thead th").each(function(i) {
-                        $("<li><a  class='toggle-column' href='javascript:void(0)' onclick=fnShowHide("+i+",'"+table+"') ><i class='fa fa-check'></i> "+$(this).text()+"</a></li>").appendTo(dropdown);
-                });
-        });
+		//////////     DATA TABLE  COLUMN TOGGLE    //////////
+		$('[data-table="table-toggle-column"]').each(function(i) {
+			var data = $(this).data(),
+				table = $(this).data("table-target"),
+				dropdown = $(this).parent().find(".dropdown-menu"),
+				col = new Array;
+			$(table).find("thead th").each(function(i) {
+				$("<li><a  class='toggle-column' href='javascript:void(0)' onclick=fnShowHide(" + i + ",'" + table + "') ><i class='fa fa-check'></i> " + $(this).text() + "</a></li>").appendTo(dropdown);
+			});
+		});
 
-        //////////     COLUMN  TOGGLE     //////////
-         $("a.toggle-column").on('click',function(){
-                $(this).toggleClass( "toggle-column-hide" );                
-                $(this).find('.fa').toggleClass( "fa-times" );              
-        });
+		//////////     COLUMN  TOGGLE     //////////
+		$("a.toggle-column").on('click', function() {
+			$(this).toggleClass("toggle-column-hide");
+			$(this).find('.fa').toggleClass("fa-times");
+		});
 
-        // Call dataTable in this page only
-        $('#table-example').dataTable();
-        $('table[data-provide="data-table"]').dataTable();
-    });
+		// Call dataTable in this page only
+		$('#table-example').dataTable();
+		$('table[data-provide="data-table"]').dataTable();
+	});
 </script>
-	<script>
+<script>
+	$(document).ready(function() {
 
-    $(document).ready(function(){
+		$("#formID").submit(function(e) {
+			e.preventDefault();
+			if ($(this).parsley('validate')) {
+				alert("send");
+			}
+		});
 
-    $("#formID").submit(function(e){
-            e.preventDefault();
-            if($(this).parsley( 'validate' )){
-                alert("send");
-            }
-        });
-        
-        //iCheck[components] validate
-        $('input').on('ifChanged', function(event){
-            $(event.target).parsley( 'validate' );
-        });
-        
-    });
+		//iCheck[components] validate
+		$('input').on('ifChanged', function(event) {
+			$(event.target).parsley('validate');
+		});
+
+	});
 </script>
-	<script type="text/javascript">
-$(document).ready(function(){
-    $('#turno > option[value=]').attr('selected', 'selected');
-    $('#tipo > option[value=]').attr('selected', 'selected'); 
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#turno > option[value=]').attr('selected', 'selected');
+		$('#tipo > option[value=]').attr('selected', 'selected');
 
 
-     //$('input:radio[name="usu_sexo"][value="{{ old('usu_sexo') }}"]').prop('checked', true);
-     //$("form input:[name=usu_sexo]").filter('[value={{ old('usu_sexo') }}]').attr('checked', true);
-      
-   
-});
+		//$('input:radio[name="usu_sexo"][value="{{ old('usu_sexo') }}"]').prop('checked', true);
+		//$("form input:[name=usu_sexo]").filter('[value={{ old('usu_sexo') }}]').attr('checked', true);
+
+
+	});
 </script>
 @endsection
-
-
-
-
-

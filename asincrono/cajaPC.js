@@ -56,10 +56,10 @@ function actListPaciCola() {
         return (h = `
         <tr>
         <th>${PC.pa_hcl} </th>
-        <th>${PC.pa_ci} </th>
+        <th>${veriNull( PC.pa_ci)} </th>
         <th>${PC.pa_nombre}  ${PC.pa_appaterno} ${PC.pa_apmaterno} </td>
         <TH>${PC.nombre} </TH>
-        <th>${PC.ps_nombre} ${PC.ps_appaterno} ${PC.ps_apmaterno}</th>
+        <th>${veriNull( PC.ps_nombre)} ${veriNull( PC.ps_appaterno)} ${veriNull( PC.ps_apmaterno)}</th>
         <th>${PC.ate_procedimiento}</th>
         <TH>${PC.ate_num_ticked}</TH>
         <TH>${PC.time_at}</TH>

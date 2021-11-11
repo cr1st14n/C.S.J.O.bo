@@ -233,6 +233,7 @@
                                 <option value="Administracion">Administracion</option>
                                 <option value="Recepcion">Recepcion</option>
                                 <option value="Caja">Caja</option>
+                                <option value="SisMed">Sistema Medico</option>
                             </select>
                         </div>
                     </div>
@@ -513,6 +514,7 @@
                                 <option value="Administracion">Administracion</option>
                                 <option value="Recepcion">Recepcion</option>
                                 <option value="Caja">Caja</option>
+                                <option value="SisMed">Sistema Medico</option>
                             </select>
                         </div>
                     </div>

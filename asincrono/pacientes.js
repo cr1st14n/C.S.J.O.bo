@@ -31,6 +31,7 @@ function listPacientes(data) {
                       <td>${pre1}</td>
                      <td>
                         <span class="tooltip-area">
+                        <button onclick="showAtender(${elem.pa_id})" class="btn btn-default btn-sm" title="Atender"><i class="fa  fa-plus-square"></i></button>
                         <button name="${elem.pa_id}" onclick="rutaAtender(this.name)" class="btn btn-default btn-sm" title="Atender"><i class="fa  fa-plus-square"></i></button>
                         <button onclick="rutaAsignarCitPrev(${elem.pa_id})" class="btn btn-default btn-sm" title="Asignar cita previa"><i class="fa  fa-stethoscope"></i></button>
                         <a name="${elem.pa_id}" onclick="rutaprintHCL(this.name)" class="btn btn-default btn-sm" target="_blank" title="Inprimir"><i class="glyphicon glyphicon-print"></i></a>
@@ -349,3 +350,17 @@ function listCitasPreviasEspecialidad() {
     );
   }
 }
+
+// * funciones de atencion v2
+function showAtender(id) {
+  console.log(id);
+  $.ajax({
+    type: "storePa1",
+    url: "",
+    data: "data",
+    dataType: "dataType",
+    success: function (response) {
+     console.log(response); 
+    }
+  });
+  }

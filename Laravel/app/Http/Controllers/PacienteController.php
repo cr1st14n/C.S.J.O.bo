@@ -463,4 +463,10 @@ class PacienteController extends Controller
       return view('pdf.pdf_HCL')->with("paciente",$paciente)->with("fechnac",$fechnac);
 
     }
+
+    // *funciones actualizadas V2
+    public function storePa1(Request $request)
+    {
+      return $request;
+    }
 }

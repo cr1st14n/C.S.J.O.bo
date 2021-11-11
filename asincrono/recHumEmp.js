@@ -368,7 +368,7 @@ function showEditDat2User(id) {
 			  }).join(' ');
 			  $('#areaDesignadaUP').html(htmlList);
 		}
-	);
+	);f
 	var data = { id: id };
 	$.get('/C.S.J.O.bo/RRHH/personal/editDatos2Emp', data, function(data) {
 		console.log(data);

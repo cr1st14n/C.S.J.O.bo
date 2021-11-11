@@ -11,9 +11,8 @@
         <div class="panel-body">
             <form class="navbar-form navbar-left">
                 <div class="form-group">
-                    <label>Buscar :</label>
+                    <label>Buscar: </label>
                     <input type="text" size="3" class="form-control" name='num' onkeypress="return soloNu(event)" onblur="limpia()" placeholder="CI/HCL" id="HCLpaciente" autocomplete="off" />
-
                     <input type="text" size="17" class="form-control" name='dato1' placeholder="NOMBRE APELLIDOS" onkeypress="return soloNuLe(event)" onblur="limpia()" id="NOMBRESpaciente" autocomplete="off" />
                 </div>
             </form>

@@ -66,9 +66,9 @@ function actListPaciCola() {
         <th>${PC.ate_turno}</th>
         <th id="body_table_paciCola_${PC.id}">${est_1}</th>
         <td>
-        <span class="tooltip-area">
         <button type="button" onClick="pago_realizar(${PC.id}) " class="btn btn-default btn-sm" title="ON/OFF"><i class="fa  fa-thumb-tack"></i></button>
         </span>
+        <span class="tooltip-area">
         </td>
         </tr>
         `);

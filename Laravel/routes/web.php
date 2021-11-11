@@ -129,6 +129,8 @@ Route::group(['middleware' => ['recepcion'], 'prefix' => '/Recepcion'], function
 		Route::get('edit/{pa_hcl}', 'PacienteController@edit')->name('edit_paciente');
 		Route::post('update', 'PacienteController@update')->name('update_paciente');
 		Route::get('delete/{pa_hcl}', 'PacienteController@destroy')->name('destroy_pa_hcl');
+		// * rutas V2
+		Route::get('storePa1','PacienteController@storePa1');
 	});
 	Route::group(['prefix' => '/atencion'], function () {
 		Route::get('index/{pa_hcl} ', 'AtencionController@index')->name('form_atencion');

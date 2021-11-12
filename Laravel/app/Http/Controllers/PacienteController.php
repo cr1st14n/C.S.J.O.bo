@@ -467,6 +467,7 @@ class PacienteController extends Controller
     // *funciones actualizadas V2
     public function storePa1(Request $request)
     {
+      return Pacientes::where('pa_id',$request->input('id'))->first();
       return $request;
     }
 }

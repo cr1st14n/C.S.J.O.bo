@@ -355,12 +355,13 @@ function listCitasPreviasEspecialidad() {
 function showAtender(id) {
   console.log(id);
   $.ajax({
-    type: "storePa1",
-    url: "",
-    data: "data",
-    dataType: "dataType",
+    type: "GET",
+    url: "storePa1",
+    data: {id:id},
+    // dataType: "dataType",
     success: function (response) {
      console.log(response); 
+     $('#md-form_create_cita').modal("show");
     }
   });
   }

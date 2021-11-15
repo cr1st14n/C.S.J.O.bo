@@ -464,10 +464,35 @@ class PacienteController extends Controller
 
     }
 
-    // *funciones actualizadas V2
+    //* ----------------- *funciones actualizadas V2-------------------------------------------------
     public function storePa1(Request $request)
     {
-      return Pacientes::where('pa_id',$request->input('id'))->first();
-      return $request;
+
+      $paciente= Pacientes::where('pa_id',$request->input('id'))->first();
+      $FN1 = $paciente['pa_fechnac']; 
+         $FN = Carbon::parse($FN1)->format('Y-m-d');
+         $FecNac = Carbon::parse($FN)->format('d-m-Y');
+         $act = Carbon::now()->format('Y-m-d');
+          if ($FN > $act || $FN == null || $FN1=='0000-00-00') {
+              $edad='Error en fecha de nacimiento';
+          }else {
+              //$edad=Carbon::parse('2017-03-15')->age;;
+                $eda= Carbon::parse($FN)->age;
+                if ($eda == '1') {
+                $edad= " $eda año";
+                }elseif ($eda > '1') {
+                $edad= " $eda años";
+                }elseif ($eda == '0') {
+                $edad= "Recien nacido o menor a un año de edad ";
+                }
+          }
+          if ($paciente['pa_fechnac']=='F') {
+            $sex='Femenino';
+          } elseif ($paciente['pa_fechnac']=='M') {
+            $sex='Masculino';
+          } else {
+            $sex='No registro';
+          }; 
+      return ['pa'=>$paciente,'edad'=>$edad,'sex'=>$sex];
     }
 }

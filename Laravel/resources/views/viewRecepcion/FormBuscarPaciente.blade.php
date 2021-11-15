@@ -123,16 +123,39 @@
 <div id="md-form_create_cita" class="modal fade md-stickTop " tabindex="-1" data-width="900">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times" id=""></i></button>
-        <h2><strong>Registrar </strong>Cita Previa</h2>
+        <h2><strong>Registro </strong>Atención Medica</h2>
     </div>
     <div class="row">
         <div class="col-lg-5">
             <div class=" panel-body">
-               <h4>asldfkj</h4><br>
-               <h4>asldfkj</h4><br>
-               <h4>asldfkj</h4><br>
-               <h4>asldfkj</h4><br>
-               <h4>asldfkj</h4><br>
+                <table class="table table-bordered">
+                    <tbody id="contendJS_datoPaciente">
+                        <tr>
+                            <td># HCL:</td>
+                            <td>--</td>
+                        </tr>
+                        <tr>
+                            <td>Paciente:</td>
+                            <td>--</td>
+                        </tr>
+                        <tr>
+                            <td>C.I.:</td>
+                            <td>--</td>
+                        </tr>
+                        <tr>
+                            <td>Sexo:</td>
+                            <td>--</td>
+                        </tr>
+                        <tr>
+                            <td>Fecha de Nacimiento:</td>
+                            <td>--</td>
+                        </tr>
+                        <tr>
+                            <td>Edad:</td>
+                            <td>--</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
         <div class="col-lg-7">

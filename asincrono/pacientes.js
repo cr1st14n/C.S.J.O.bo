@@ -1,7 +1,7 @@
 //var frase = "Son tres mil trescientos treinta y tres con nueve";
 //frase3 = frase.replace(/[ ]/gi,'.');
 //alert(frase3);
-$("#form_create_CitPrev").on("submit", function(event) {
+$("#form_create_CitPrev").on("submit", function (event) {
   event.preventDefault();
   if ($("#id_paciente_create_citPrev").val() > 0) {
     createCitPrev();
@@ -10,13 +10,13 @@ $("#form_create_CitPrev").on("submit", function(event) {
   }
 });
 //* --------------
-$(function() {
+$(function () {
   $("#HCLpaciente").on("keyup", buscarHCLpaciente);
   $("#NOMBRESpaciente").on("keyup", buscarNOMBRESpaciente);
 });
 function listPacientes(data) {
   var html = data
-    .map(function(elem, index) {
+    .map(function (elem, index) {
       var pre1 = "";
       if (elem.hclEst > 0) {
         pre1 = `<button class="btn btn-danger" onclick="showEstPres(${elem.hclEst})"><i class="fa fa-ban"></i></button>`;
@@ -68,7 +68,7 @@ function registrarPrestamo() {
     data.verticalEdge = "right";
     data.horizontalEdge = "top";
     data.theme = "danger";
-    setTimeout(function() {
+    setTimeout(function () {
       $.notific8("Error, Complete el formulario.", data);
     });
   } else {
@@ -77,10 +77,10 @@ function registrarPrestamo() {
       _token: $("meta[name=csrf-token]").attr("content"),
       id: id,
       usuEntrega: usuEntrega,
-      areaPrestamo: area
+      areaPrestamo: area,
     };
     $.post(url, data)
-      .done(function(prestamo) {
+      .done(function (prestamo) {
         console.log(prestamo);
         if (prestamo == "1") {
           notif("1", "Prestamo Registrado");
@@ -93,17 +93,17 @@ function registrarPrestamo() {
           data.verticalEdge = "right";
           data.horizontalEdge = "top";
           data.theme = "danger";
-          setTimeout(function() {
+          setTimeout(function () {
             $.notific8("Error, vuelva a intentarlo.", data);
           });
         }
       })
-      .fail(function() {
+      .fail(function () {
         var data = new Array();
         data.verticalEdge = "right";
         data.horizontalEdge = "top";
         data.theme = "danger";
-        setTimeout(function() {
+        setTimeout(function () {
           $.notific8("Error en el servidor, vuelva a intentarlo.", data);
         });
       });
@@ -140,7 +140,7 @@ function buscarHCLpaciente() {
     console.log("sin nuemro");
     $("#resulBusqPacientes").html("");
   } else {
-    $.get("/C.S.J.O.bo/api/buscarPacienteHCL/" + hcl + "", function(paciente) {
+    $.get("/C.S.J.O.bo/api/buscarPacienteHCL/" + hcl + "", function (paciente) {
       listPacientes(paciente);
       /*$('#resulBusqPacientes').html("");
             for (var i = 0; i <= paciente.length - 1; i++) {
@@ -173,11 +173,11 @@ function buscarNOMBRESpaciente() {
     $("#resulBusqPacientes").html("");
   } else {
     nombres = nombres.replace(/[ ]/gi, "-");
-    $.get("/C.S.J.O.bo/api/buscarPacienteNombre/" + nombres + "", function(
-      paciente
-    ) {
-      listPacientes(paciente);
-      /*$('#resulBusqPacientes').html("");
+    $.get(
+      "/C.S.J.O.bo/api/buscarPacienteNombre/" + nombres + "",
+      function (paciente) {
+        listPacientes(paciente);
+        /*$('#resulBusqPacientes').html("");
             for (var i = paciente.length - 1; i >= 0; i--) {
                 console.log(paciente[i]);
                 var tr = `<tr>
@@ -198,12 +198,13 @@ function buscarNOMBRESpaciente() {
 
                 $("#resulBusqPacientes").append(tr)
             }*/
-    });
+      }
+    );
   }
 }
 function showEstPres(prest) {
   console.log(prest);
-  $.get("/C.S.J.O.bo/Recepcion/PresHCL/show/" + prest + "", function(prest) {
+  $.get("/C.S.J.O.bo/Recepcion/PresHCL/show/" + prest + "", function (prest) {
     var usu = prest.prest_area;
     $("#area_pres_update").val(usu);
     document.getElementById("personal_pres_update").value =
@@ -217,7 +218,7 @@ function showEstPres(prest) {
       .attr("class", "modal fade")
       .addClass("md-stickTop")
       .modal("show");
-  }).fail(function() {
+  }).fail(function () {
     notif("2", "ERROR SERVER BUSCAR PREST");
   });
 }
@@ -230,10 +231,10 @@ function updatePrestamo() {
     _token: $("meta[name=csrf-token]").attr("content"),
     id: id,
     area: area,
-    usuentrega: usuentrega
+    usuentrega: usuentrega,
   };
   $.post(url, data)
-    .done(function(prest) {
+    .done(function (prest) {
       if (prest == 1) {
         document.getElementById("resulBusqPacientes").innerHTML = "";
         $("#md-editPres").modal("hide");
@@ -246,36 +247,37 @@ function updatePrestamo() {
 }
 function cerrarPrestamo() {
   var id = document.getElementById("idPresCerrar").innerText;
-  $.get("/C.S.J.O.bo/Recepcion/PresHCL/cerrarPrestamo/" + id + "", function(
-    result
-  ) {
-    console.log(result);
-    if (result == 1) {
-      $("#md-editPres").modal("hide");
-      notif("1", "Prestamo concluido");
-      document.getElementById("resulBusqPacientes").innerHTML = "";
-    } else {
-      notif("3", "Error!. velva a intentarlo");
+  $.get(
+    "/C.S.J.O.bo/Recepcion/PresHCL/cerrarPrestamo/" + id + "",
+    function (result) {
+      console.log(result);
+      if (result == 1) {
+        $("#md-editPres").modal("hide");
+        notif("1", "Prestamo concluido");
+        document.getElementById("resulBusqPacientes").innerHTML = "";
+      } else {
+        notif("3", "Error!. velva a intentarlo");
+      }
     }
-  }).fail(function() {
+  ).fail(function () {
     notif("2", "Error SERVER");
   });
 }
 
 function rutaAsignarCitPrev(id) {
   $("#form_create_CitPrev").trigger("reset");
-  $('#listCitPrev').html('');
-  $.get("../citaPrevia/infoPaci", { id: id }, function(data) {
+  $("#listCitPrev").html("");
+  $.get("../citaPrevia/infoPaci", { id: id }, function (data) {
     console.log(data);
     $("#id_paciente_create_citPrev").val("");
     $("#id_paciente_create_citPrev").val(data.pac.pa_id);
     var espcia = data.esp
-      .map(function(e) {
+      .map(function (e) {
         return `<option value="${e.id}">${e.nombre}</option>`;
       })
       .join(" ");
     var med = data.med
-      .map(function(e) {
+      .map(function (e) {
         return ` <option value="${e.id}">${e.ps_appaterno}</option>`;
       })
       .join(" ");
@@ -309,9 +311,9 @@ function createCitPrev() {
     turno: $("#ate_turno_citPrev").val(),
     fecha: $("#fecha_citPrev").val(),
     hora: $("#time_citPrev").val(),
-    observacion: $("#observacion_citPrev").val()
+    observacion: $("#observacion_citPrev").val(),
   };
-  $.post("../citaPrevia/create", data, function(data) {
+  $.post("../citaPrevia/create", data, function (data) {
     if (data == 1) {
       notif("1", "Cita previa Registrada");
       $("#md-form_create_sitaPrev").modal("hide");
@@ -330,11 +332,11 @@ function listCitasPreviasEspecialidad() {
       "../citaPrevia/listagenda1",
       {
         id: $("#ate_especialidad_citPrev").val(),
-        date: $("#fecha_citPrev").val()
+        date: $("#fecha_citPrev").val(),
       },
-      function(data) {
+      function (data) {
         var html = data
-          .map(function(e) {
+          .map(function (e) {
             return `
           <tr id="${e.id}">
               <td align="right">${e.pa_hcl}</td>
@@ -345,7 +347,7 @@ function listCitasPreviasEspecialidad() {
           `;
           })
           .join(" ");
-          $('#listCitPrev').html(html);
+        $("#listCitPrev").html(html);
       }
     );
   }
@@ -357,11 +359,38 @@ function showAtender(id) {
   $.ajax({
     type: "GET",
     url: "storePa1",
-    data: {id:id},
+    data: { id: id },
     // dataType: "dataType",
-    success: function (response) {
-     console.log(response); 
-     $('#md-form_create_cita').modal("show");
-    }
+    success: function (r) {
+      console.log(r);
+      htmlDatoPaciente = `
+      <tr>
+          <td># HCL:</td>
+          <td>${r.pa.pa_hcl}</td>
+      </tr>
+      <tr>
+          <td>C.I.:</td>
+          <td>${r.pa.pa_ci}</td>
+      </tr>
+      <tr>
+          <td>Paciente:</td>
+          <td>${r.pa.pa_nombre} ${r.pa.pa_appaterno} ${r.pa.pa_apmaterno}</td>
+      </tr>
+      <tr>
+          <td>Sexo:</td>
+          <td>${r.sex}</td>
+      </tr>
+      <tr>
+          <td>Fecha de Nacimiento:</td>
+          <td>${ moment(r.pa.pa_fechnac).format('DD/MM/YYYY')}</td>
+      </tr>
+      <tr>
+          <td>Edad:</td>
+          <td>${r.edad}</td>
+      </tr>
+      `;
+      $("#contendJS_datoPaciente").html(htmlDatoPaciente);
+      $("#md-form_create_cita").modal("show");
+    },
   });
-  }
+}

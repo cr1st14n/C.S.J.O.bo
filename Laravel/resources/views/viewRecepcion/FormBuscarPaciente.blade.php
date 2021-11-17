@@ -165,29 +165,16 @@
                     <div class="panel-body">
                         <div class="form-horizontal" data-collabel="3" data-alignlabel="center">
                             <div class="form-group">
-                                <label class="control-label">Fecha</label>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <input type="date" id="fecha_citPrev" class="form-control rounded" min="2000-01-01" max="2025-12-31" required>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <input type="time" id="time_citPrev" class="form-control rounded" required>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
                                 <label class="control-label">Especialidad:</label>
                                 <div class="row">
                                     <div class="col-md-8">
                                         <div class="row">
-                                            <div class="col-lg-8">
-                                                <select required="" id="ate_especialidad_citPrev" name="ate_especialidad" class=" form-control show-menu-arrow" data-style="btn-theme-inverse">
+                                            <div class="col-lg-12">
+                                                <select required="" name="at" class=" form-control show-menu-arrow" data-style="btn-theme-inverse" id="selecEspecialidad">
                                                     <option selected="true" disabled="disabled">Seleccionar</option>
                                                 </select>
                                             </div>
-                                            <div class="col-lg-4">
-                                                <button class="btn btn-theme-inverse" type="button" onclick="listCitasPreviasEspecialidad()"><i class="fa fa-search"></i></button>
-                                            </div>
+                                           
                                         </div>
                                     </div>
                                 </div>
@@ -234,8 +221,8 @@
                             <div class="form-group">
                                 <label class="control-label">Medico Asignado</label>
                                 <div class="row">
-                                    <div class="col-md-8">
-                                        <select id="ate_med_citPrev" class="form-control" data-size="10" required="">
+                                    <div class="col-md-12">
+                                        <select id="ate_med_cit" class="form-control" data-size="10" required="">
                                             <option selected="true" disabled="disabled">Buscar medico</option>
                                         </select>
                                     </div>

@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\especialidad;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use App\Pacientes;
+use App\User;
 use DB;
 use Carbon\Carbon;
 
@@ -467,8 +469,20 @@ class PacienteController extends Controller
     //* ----------------- *funciones actualizadas V2-------------------------------------------------
     public function storePa1(Request $request)
     {
-
+      //? datos de paciente
       $paciente= Pacientes::where('pa_id',$request->input('id'))->first();
+      
+      //? ----- especialidades
+      $esp=especialidad::select('id','nombre')->get();
+
+      // ? ----- lista de medicos
+      $med=User::where('usu_area','SisMed')
+      ->join('user_datos_insts as udi','users.id','udi.cod_usu')
+      ->select('users.id','users.usu_nombre','users.usu_appaterno','users.usu_apmaterno')
+      ->addSelect('udi.di_especialidad')
+      ->get();
+
+      //? procesedar fecha nacimiento
       $FN1 = $paciente['pa_fechnac']; 
          $FN = Carbon::parse($FN1)->format('Y-m-d');
          $FecNac = Carbon::parse($FN)->format('d-m-Y');
@@ -493,6 +507,6 @@ class PacienteController extends Controller
           } else {
             $sex='No registro';
           }; 
-      return ['pa'=>$paciente,'edad'=>$edad,'sex'=>$sex];
+      return ['pa'=>$paciente,'edad'=>$edad,'sex'=>$sex,'esp'=>$esp,'med'=>$med];
     }
 }

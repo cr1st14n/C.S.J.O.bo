@@ -362,6 +362,19 @@ function showAtender(id) {
     data: { id: id },
     // dataType: "dataType",
     success: function (r) {
+      htmlEsp=r.esp.map(function (e) {
+        return h =`
+        <option value='${e.id}' >${e.nombre}</option>
+        `;
+        }).join(' ');
+
+      console.log(r);
+      htmlMed=r.med.map(function (e) {
+        return h =`
+        <option value='${e.id}' >${e.usu_nombre} ${e.usu_appaterno} ${e.usu_apmaterno} // ${e.di_especialidad}</option>
+        `;
+        }).join(' ');
+
       console.log(r);
       htmlDatoPaciente = `
       <tr>
@@ -389,6 +402,8 @@ function showAtender(id) {
           <td>${r.edad}</td>
       </tr>
       `;
+      $("#selecEspecialidad").html(htmlEsp);
+      $("#ate_med_cit").html(htmlMed);
       $("#contendJS_datoPaciente").html(htmlDatoPaciente);
       $("#md-form_create_cita").modal("show");
     },

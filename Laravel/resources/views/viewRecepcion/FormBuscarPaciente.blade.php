@@ -159,7 +159,7 @@
             </div>
         </div>
         <div class="col-lg-7">
-            <form id="form_create_CitPrev">
+            <form id="ate_formCreateCitPrev">
                 <input type="number" id="id_paciente_create_citPrev" hidden>
                 <div class="modal-body">
                     <div class="panel-body">
@@ -170,7 +170,7 @@
                                     <div class="col-md-8">
                                         <div class="row">
                                             <div class="col-lg-12">
-                                                <select required="" name="at" class=" form-control show-menu-arrow" data-style="btn-theme-inverse" id="selecEspecialidad">
+                                                <select required="" name="at_especialidad" class=" form-control show-menu-arrow" data-style="btn-theme-inverse" id="selecEspecialidad">
                                                     <option selected="true" disabled="disabled">Seleccionar</option>
                                                 </select>
                                             </div>
@@ -185,15 +185,15 @@
                                     <div class="col-lg-6">
                                         <ul class="iCheck" data-color="blue">
                                             <li>
-                                                <input type="radio" name="ateProcedimiento" value="Consulta" checked="true">
+                                                <input type="radio" name="ate_Procedimiento" value="Consulta" checked="true">
                                                 <label class=""> Consulta</label>
                                             </li>
                                             <li>
-                                                <input type="radio" name="ateProcedimiento" value="Control">
+                                                <input type="radio" name="ate_Procedimiento" value="Control">
                                                 <label class="">Control </label>
                                             </li>
                                             <li>
-                                                <input type="radio" name="ateProcedimiento" value="Emergencias">
+                                                <input type="radio" name="ate_Procedimiento" value="Emergencias">
                                                 <label class="">Emergencias</label>
                                             </li>
 
@@ -202,15 +202,15 @@
                                     <div class="col-lg-6">
                                         <ul class="iCheck" data-color="blue">
                                             <li>
-                                                <input type="radio" name="ateProcedimiento" value="Curacion Mayor">
+                                                <input type="radio" name="ate_Procedimiento" value="Curacion Mayor">
                                                 <label class="">CRN Mayor</label>
                                             </li>
                                             <li>
-                                                <input type="radio" name="ateProcedimiento" value="Curacion Menor">
+                                                <input type="radio" name="ate_Procedimiento" value="Curacion Menor">
                                                 <label class="">CRN Menor</label>
                                             </li>
                                             <li>
-                                                <input type="radio" name="ateProcedimiento" value="Enfermeria">
+                                                <input type="radio" name="ate_Procedimiento" value="Enfermeria">
                                                 <label class="">Enfermeria</label>
                                             </li>
 
@@ -222,7 +222,7 @@
                                 <label class="control-label">Medico Asignado</label>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <select id="ate_med_cit" class="form-control" data-size="10" required="">
+                                        <select id="ate_medCit" class="form-control" data-size="10" required="">
                                             <option selected="true" disabled="disabled">Buscar medico</option>
                                         </select>
                                     </div>
@@ -231,7 +231,7 @@
                             <div class="form-group">
                                 <label for="ticked" class="col-md-4 control-label"> # de ticked</label>
                                 <div class="col-md-3">
-                                    <input type="number" class="form-control" placeholder="# ticked" id="ticked_citPrev" required="" autocomplete="off"></input>
+                                    <input type="number" class="form-control" placeholder="# ticked" id="ate_ticked" required="" autocomplete="off"></input>
                                 </div>
                             </div>
 
@@ -239,7 +239,7 @@
                                 <label class="control-label">Turno T/M</label>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <select id="ate_turno_citPrev" class=" form-control show-menu-arrow" data-style="btn-theme-inverse">
+                                        <select id="ate_turno" class=" form-control show-menu-arrow" data-style="btn-theme-inverse">
                                             <option value="Mañana">Mañana</option>
                                             <option value="Tarde">Tarde</option>
                                         </select>
@@ -250,7 +250,7 @@
                                 <label class="control-label">Observacion</label>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <textarea id="observacion_citPrev" cols="30" rows="2" require></textarea>
+                                        <textarea id="ate_observacion" cols="30" rows="2" require></textarea>
                                     </div>
                                 </div>
                             </div>

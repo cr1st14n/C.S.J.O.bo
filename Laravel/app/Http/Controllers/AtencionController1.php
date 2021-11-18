@@ -489,4 +489,9 @@ class AtencionController extends Controller
 
         return redirect()->action('AtencionController@showAll');
     }
+
+    public function createAte1(Request $request)
+    {
+        return $request;
+    }
 }

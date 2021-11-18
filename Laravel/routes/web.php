@@ -141,6 +141,8 @@ Route::group(['middleware' => ['recepcion'], 'prefix' => '/Recepcion'], function
 		Route::post('show', 'AtencionController@show')->name('show');
 		Route::get('delete/{id}', 'AtencionController@destroy')->name('delete_atencion');
 		Route::get('pagar_ate/{id} ', 'AtencionController@pago')->name('recep_pago');
+		//* ----- rutaV2
+		Route::post('createAte1','AtencionController@createAte1');
 	});
 	Route::group(['prefix'=>'citaPrevia'],function (){
 		Route::get('infoPaci','CitPrevController@infoPaci');

@@ -362,20 +362,24 @@ function showAtender(id) {
     data: { id: id },
     // dataType: "dataType",
     success: function (r) {
-      htmlEsp=r.esp.map(function (e) {
-        return h =`
+      htmlEsp = r.esp
+        .map(function (e) {
+          return (h = `
         <option value='${e.id}' >${e.nombre}</option>
-        `;
-        }).join(' ');
+        `);
+        })
+        .join(" ");
 
       console.log(r);
-      htmlMed=r.med.map(function (e) {
-        return h =`
+      htmlMed = r.med
+        .map(function (e) {
+          return h = `
         <option value='${e.id}' >${e.usu_nombre} ${e.usu_appaterno} ${e.usu_apmaterno} // ${e.di_especialidad}</option>
         `;
-        }).join(' ');
+        })
+        .join(" ");
 
-      console.log(r);
+      console.log(htmlMed);
       htmlDatoPaciente = `
       <tr>
           <td># HCL:</td>
@@ -395,7 +399,7 @@ function showAtender(id) {
       </tr>
       <tr>
           <td>Fecha de Nacimiento:</td>
-          <td>${ moment(r.pa.pa_fechnac).format('DD/MM/YYYY')}</td>
+          <td>${moment(r.pa.pa_fechnac).format("DD/MM/YYYY")}</td>
       </tr>
       <tr>
           <td>Edad:</td>
@@ -410,17 +414,17 @@ function showAtender(id) {
   });
 }
 
-$('#ate_formCreateCitPrev').submit(function (e) { 
+$("#ate_formCreateCitPrev").submit(function (e) {
   e.preventDefault();
-  inp=$(this).serialize();
+  inp = $(this).serialize();
   console.log(inp);
   $.ajax({
     type: "POST",
     url: "../atencion/createAte1",
-    data:{_token: $("meta[name=csrf-token]").attr("content"),data:inp},
+    data: { _token: $("meta[name=csrf-token]").attr("content"), data: inp },
     // dataType: "dataType",
     success: function (response) {
       console.log(response);
-    }
+    },
   });
 });

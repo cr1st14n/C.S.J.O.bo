@@ -372,8 +372,8 @@
                                 <label class="control-label">Medico Asignado</label>
                                 <div class="row">
                                     <div class="col-md-8">
-                                        <select id="ate_med_cit" class="" data-size="10" required="">
-                                            <option selected="true" disabled="disabled">Buscar medico</option>
+                                        <select id="ate_med_citPrev" class="form-control" data-size="10" required="">
+                                            <option selected="true" disabled="disabled">Medico</option>
                                         </select>
                                     </div>
                                 </div>

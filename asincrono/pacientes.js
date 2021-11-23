@@ -373,9 +373,9 @@ function showAtender(id) {
       console.log(r);
       htmlMed = r.med
         .map(function (e) {
-          return h = `
+          return (h = `
         <option value='${e.id}' >${e.usu_nombre} ${e.usu_appaterno} ${e.usu_apmaterno} // ${e.di_especialidad}</option>
-        `;
+        `);
         })
         .join(" ");
 
@@ -407,7 +407,7 @@ function showAtender(id) {
       </tr>
       `;
       $("#selecEspecialidad").html(htmlEsp);
-      $("#ate_med_cit").html(htmlMed);
+      $("#ate_medCit").html(htmlMed);
       $("#contendJS_datoPaciente").html(htmlDatoPaciente);
       $("#md-form_create_cita").modal("show");
     },

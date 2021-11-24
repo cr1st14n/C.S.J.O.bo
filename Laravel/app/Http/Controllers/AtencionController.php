@@ -494,6 +494,9 @@ class AtencionController extends Controller
     }
     public function createAte1(Request $request)
     {
-        return $request->data;
+
+        // return $request->input('data');
+        $dat=($request->input('data')->input('ate_Procedimiento'));
+        return $dat;
     }
 }

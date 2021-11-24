@@ -416,7 +416,7 @@ function showAtender(id) {
 
 $("#ate_formCreateCitPrev").submit(function (e) {
   e.preventDefault();
-  inp = $(this).serialize();
+  inp = $('#ate_formCreateCitPrev').serialize();
   console.log(inp);
   $.ajax({
     type: "POST",
@@ -424,6 +424,7 @@ $("#ate_formCreateCitPrev").submit(function (e) {
     data: { _token: $("meta[name=csrf-token]").attr("content"), data: inp },
     // dataType: "dataType",
     success: function (response) {
+      console.log("asdfasdf");
       console.log(response);
     },
   });

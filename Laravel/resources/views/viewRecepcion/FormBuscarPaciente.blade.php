@@ -222,7 +222,7 @@
                                 <label class="control-label">Medico Asignado</label>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <select id="ate_medCit" class="form-control" data-size="10" required="">
+                                        <select id="ate_medCit" name="ate_medCit" class="form-control" data-size="10" required="">
                                             <option selected="true" disabled="disabled">Buscar medico</option>
                                         </select>
                                     </div>
@@ -231,7 +231,7 @@
                             <div class="form-group">
                                 <label for="ticked" class="col-md-4 control-label"> # de ticked</label>
                                 <div class="col-md-3">
-                                    <input type="number" class="form-control" placeholder="# ticked" id="ate_ticked" required="" autocomplete="off"></input>
+                                    <input type="number" class="form-control" placeholder="# ticked" id="ate_ticked" name="ate_ticked" required="" autocomplete="off"></input>
                                 </div>
                             </div>
 
@@ -239,7 +239,7 @@
                                 <label class="control-label">Turno T/M</label>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <select id="ate_turno" class=" form-control show-menu-arrow" data-style="btn-theme-inverse">
+                                        <select id="ate_turno" name="ate_turno" class=" form-control show-menu-arrow" data-style="btn-theme-inverse">
                                             <option value="Mañana">Mañana</option>
                                             <option value="Tarde">Tarde</option>
                                         </select>
@@ -250,7 +250,7 @@
                                 <label class="control-label">Observacion</label>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <textarea id="ate_observacion" cols="30" rows="2" require></textarea>
+                                        <textarea id="ate_observacion" name="ate_observacion" cols="30" rows="2" require></textarea>
                                     </div>
                                 </div>
                             </div>

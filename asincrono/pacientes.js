@@ -1,6 +1,10 @@
 //var frase = "Son tres mil trescientos treinta y tres con nueve";
 //frase3 = frase.replace(/[ ]/gi,'.');
 //alert(frase3);
+
+// * ------- variables de seleccion
+var PaSe='';
+// *------------------------------
 $("#form_create_CitPrev").on("submit", function (event) {
   event.preventDefault();
   if ($("#id_paciente_create_citPrev").val() > 0) {
@@ -355,7 +359,7 @@ function listCitasPreviasEspecialidad() {
 
 // * funciones de atencion v2
 function showAtender(id) {
-  console.log(id);
+  PaSe=id;
   $.ajax({
     type: "GET",
     url: "storePa1",
@@ -416,12 +420,12 @@ function showAtender(id) {
 
 $("#ate_formCreateCitPrev").submit(function (e) {
   e.preventDefault();
-  inp = $('#ate_formCreateCitPrev').serialize();
+  inp = $('#ate_formCreateCitPrev').serializeArray();
   console.log(inp);
   $.ajax({
     type: "POST",
     url: "../atencion/createAte1",
-    data: { _token: $("meta[name=csrf-token]").attr("content"), data: inp },
+    data: { _token: $("meta[name=csrf-token]").attr("content"), data: inp ,paciente:PaSe},
     // dataType: "dataType",
     success: function (response) {
       console.log("asdfasdf");

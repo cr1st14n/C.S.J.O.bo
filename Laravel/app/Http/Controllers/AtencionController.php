@@ -479,8 +479,12 @@ class AtencionController extends Controller
             $request['data'][3]['name'] => $request['data'][3]['value'],
             $request['data'][4]['name'] => $request['data'][4]['value'],
             $request['data'][5]['name'] => $request['data'][5]['value'],
+            // $request['data'][6]['name'] => $request['data'][6]['value'],
         ];
         // return $data['at_especialidad'];
+        // return $request;
+        
+        
 
         $new=new atencion;
         $new->usu_ci=Auth::user()->id;
@@ -491,7 +495,7 @@ class AtencionController extends Controller
         $new->ate_descripcion=$data['ate_observacion'];
         $new->ate_turno=$data['ate_turno'];
         $new->ate_num_ticked=$data['ate_ticked'];
-        $new->ate_pago='pendiente';
+        $new->ate_pago=(array_key_exists('6',$request['data'])) ? 'cancelado' : 'pendiente' ;
         $new->ate_estAteMed=0;
         $new->ate_fecha=Carbon::now()->format('Y-m-d');
         // * datos de auditoria 

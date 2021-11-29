@@ -428,8 +428,13 @@ $("#ate_formCreateCitPrev").submit(function (e) {
     data: { _token: $("meta[name=csrf-token]").attr("content"), data: inp ,paciente:PaSe},
     // dataType: "dataType",
     success: function (response) {
-      console.log("asdfasdf");
-      console.log(response);
+      if (response) {
+        notif('1','Guardado.');
+        $('#ate_formCreateCitPrev').trigger('reset');
+        $("#md-form_create_cita").modal("hide");
+      } else {
+        notif('2','Error!.');
+      }
     },
   });
 });

@@ -174,7 +174,7 @@
                                                     <option selected="true" disabled="disabled">Seleccionar</option>
                                                 </select>
                                             </div>
-                                           
+
                                         </div>
                                     </div>
                                 </div>
@@ -253,6 +253,18 @@
                                         <textarea id="ate_observacion" name="ate_observacion" cols="30" rows="2" require></textarea>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Registrar como pagado</label>
+                                <div class="row">
+                                    <div class="col-sm-4 ios-switch red">
+                                        <div class="switch">
+                                            <input type="checkbox" name="est_pagado" >
+                                        </div>
+                                    </div><!-- //col-sm-4-->
+
+                                </div>
+
                             </div>
                         </div>
                     </div>

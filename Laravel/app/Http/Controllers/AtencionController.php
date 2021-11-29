@@ -480,19 +480,24 @@ class AtencionController extends Controller
             $request['data'][4]['name'] => $request['data'][4]['value'],
             $request['data'][5]['name'] => $request['data'][5]['value'],
         ];
-        return $data['at_especialidad'];
+        // return $data['at_especialidad'];
 
         $new=new atencion;
         $new->usu_ci=Auth::user()->id;
         $new->pa_id=$request['paciente'];
         $new->ate_especialidad=$data['at_especialidad'];
-        $new->ate_procedimiento=$data['ateProcedimiento'];
-        $new->ate_med=$data[''];
-        $new->ate_descripcion=$data[''];
-        $new->ate_turno=$data[''];
-        $new->ate_num_ticked=$data[''];
-        $new->ate_pago=$data[''];
-        $new->ate_estAteMed=$data[''];
+        $new->ate_procedimiento=$data['ate_Procedimiento'];
+        $new->ate_med=$data['ate_medCit'];
+        $new->ate_descripcion=$data['ate_observacion'];
+        $new->ate_turno=$data['ate_turno'];
+        $new->ate_num_ticked=$data['ate_ticked'];
+        $new->ate_pago='pendiente';
+        $new->ate_estAteMed=0;
+        $new->ate_fecha=Carbon::now()->format('Y-m-d');
+        // * datos de auditoria 
+        $new->ca_fecha=Carbon::now()->format('Y-m-d');
+        $res=$new->save();
+        return $res = (true) ? 1 : 0 ;
        
     }
 }

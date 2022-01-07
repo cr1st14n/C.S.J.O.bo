@@ -413,7 +413,10 @@ function showAtender(id) {
       $("#selecEspecialidad").html(htmlEsp);
       $("#ate_medCit").html(htmlMed);
       $("#contendJS_datoPaciente").html(htmlDatoPaciente);
+      $('#ate_formCreateCitPrev').trigger('reset');
+      $('#inp_estPagado_A').prop('checked',false);
       $("#md-form_create_cita").modal("show");
+      console.log('ajsdlkfj');
     },
   });
 }

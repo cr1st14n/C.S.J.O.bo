@@ -255,15 +255,20 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label">Registrar como pagado</label>
-                                <div class="row">
-                                    <div class="col-sm-4 ios-switch red">
-                                        <div class="switch">
-                                            <input type="checkbox" name="est_pagado" >
+                                <!-- <label class="control-label">Registrar como pagado</label> -->
+                                <div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <ul class="" data-color="red">
+                                                <li>
+                                                    
+                                                    <label><input type="checkbox" name="est_pagado" id="inp_estPagado_A"> Registrar como cancelado</label>
+                                                </li>
+                                            </ul>
                                         </div>
-                                    </div><!-- //col-sm-4-->
-
+                                    </div><!-- //row-->
                                 </div>
+
 
                             </div>
                         </div>

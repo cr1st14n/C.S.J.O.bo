@@ -48,7 +48,7 @@ function mueveReloj() {
   if (cont == 0 || minuto < 0 ) {
     min1 = minuto;
     showModal();
-    // act_tablaCOntenido_1()
+    act_tablaCOntenido_1()
   }
 }
 
@@ -77,7 +77,7 @@ function showModal() {
 function act_tablaCOntenido_1() {
   $.ajax({
     type: "GET",
-    url: "Recepcion/IndexPagPantInfo/pantallaListMed",
+    url: "pantallaListMed",
     // data: "data",
     // dataType: "dataType",
     success: function (dat) {

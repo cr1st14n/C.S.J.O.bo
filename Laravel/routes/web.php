@@ -21,6 +21,8 @@ Route::post('searchredirect', 'PacienteController@buscar');
 
 // -------pantalla de informaciones-----------//
 Route::get('pantallaInformacion','PantInfoController@index');
+route::get('pantallaListMed','PantInfoController@pantallaListMed');
+
 
 //--------------administracion---------//
 
